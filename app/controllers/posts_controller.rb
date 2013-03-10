@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = @auth.posts.all
+    @posts = @auth.posts.order('created_at desc')
   end
   def new
     @post = Post.new

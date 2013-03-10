@@ -13,5 +13,6 @@
 class Klass < ActiveRecord::Base
   attr_accessible :schoolyear, :period, :course_id
   belongs_to :course
+  has_and_belongs_to_many :posts
   has_and_belongs_to_many :students
 end
