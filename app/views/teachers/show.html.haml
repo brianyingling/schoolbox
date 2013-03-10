@@ -1,0 +1,35 @@
+%script
+  $('body').css('background-image','');
+.row
+  .large-12.columns
+    %h3= "Hello #{@auth.first_name} #{@auth.last_name}"
+.row
+  .large-3.columns.dividers
+    %h4 My Courses
+    %ul
+    - @auth.courses.each do |course|
+      = link_to course.name, course_path, :remote=>true
+  .large-9.columns.dividers
+    %h4 My Posts
+    = link_to "New Post", new_post_path, :id=>'new_post_btn', :remote=>true, :class=>'button radius tiny'
+    .posts
+    - @auth.posts.each do |post|
+      .post
+        %h5= post.title
+        .edit_area= post.message
+        %p= post.created_at
+        = hidden_field_tag @auth.id
+        = button_tag "Edit", nil
+        = button_tag "Delete", :confirm=>'Are you sure?'
+      - post.comments.each do |comment|
+        .comment
+          %h6= comment.text
+          %p= "Posted by #{comment.student.first_name} #{comment.student.last_name}"
+          %p= comment.created_at
+
+
+
+
+
+  / .large-3.columns.dividers
+  /   %h4 My Assignments

@@ -17,4 +17,12 @@ class SessionController < ApplicationController
       redirect_to login_path
     end
   end
+  def destroy
+    if session[:teacher_id].present?
+      session[:teacher_id] = nil
+    else
+      session[:student_id] = nil
+    end
+    redirect_to root_path
+  end
 end
