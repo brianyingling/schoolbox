@@ -1,15 +1,13 @@
 $(function() {
 
   $('#login_btn_nav').click(show_login);
-  $('body').on('mouseleave','#login_form', hide_login);
+  //$('body').on('mouseleave','#login_form', hide_login);
   $('body').on('click', '#login_form_cancel_btn', hide_login);
   $('body').on('click', '#post_form_cancel_btn', hide_post_form);
+  $('.body').on('change', '.post', makeEditable);
 
   // jeditable
-  $('.edit').editable('http://www.example.com/save.php', {
-      indicator : 'Saving...',
-      tooltip   : 'Click to edit...'
-  });
+
 
 
   $('.edit_area').editable("http://www.example.com/save.php", {
@@ -20,6 +18,13 @@ $(function() {
   });
 
 });
+
+function makeEditable() {
+  $('.edit').editable('http://www.example.com/save.php', {
+      indicator : 'Saving...',
+      tooltip   : 'Click to edit...'
+  });
+}
 
 function show_login() {
   $('#login_form.login_form').slideDown();

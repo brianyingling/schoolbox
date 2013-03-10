@@ -1,0 +1,23 @@
+.row
+  .large-12.columns
+    %h2= @course.name
+    %h5 Teacher:
+    %h5= @course.teacher.first_name + " " + @course.teacher.last_name
+    %h5 Description:
+    %p= @course.description
+.row
+  .large-6.columns
+    %h5 Classes Offered:
+    %table
+      %tr
+        %td School Year
+        %td Name
+        %td Period
+        %td Number of Students
+      - @course.klasses.each do |klass|
+        %tr.klass
+          %td= klass.schoolyear
+          %td= klass.course.name
+          %td= klass.period
+          %td= klass.students.count
+  .large-6.columns
