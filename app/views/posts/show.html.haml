@@ -1,0 +1,16 @@
+.row
+  .large-12.columns
+    %h3 My Posts
+    - @posts.each do |post|
+      .post
+        %h5= post.title
+        .edit_area= post.message
+        %p= post.created_at
+        = hidden_field_tag @auth.id
+        = button_tag "Edit", nil
+        = link_to "Delete", post, :method=>'delete', :class=>'button', :confirm=>'Are you sure?'
+      - post.comments.each do |comment|
+        .comment
+          %h6= comment.text
+          %p= "Posted by #{comment.student.first_name} #{comment.student.last_name}"
+          %p= comment.created_at

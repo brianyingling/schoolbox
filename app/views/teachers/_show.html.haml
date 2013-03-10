@@ -17,8 +17,8 @@
         .edit_area= post.message
         %p= post.created_at
         = hidden_field_tag @auth.id
-        = button_tag "Edit", nil
-        = button_tag "Delete", :confirm=>'Are you sure?'
+        = link_to "Edit", nil, :class=>'button'
+        = link_to "Delete", post, :method=>'delete', :class=>'button', :confirm=>'Are you sure?'
       - post.comments.each do |comment|
         .comment
           %h6= comment.text
