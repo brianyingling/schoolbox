@@ -1,0 +1,20 @@
+.container
+  %br
+  .row{:style=>'background: #fff;opacity:0.9;'}
+    .large-5.columns
+      %h3 New Student Registration
+      = form_for @student do |f|
+        = f.label           :username
+        = f.text_field      :username
+        = f.label           :first_name
+        = f.text_field      :first_name
+        = f.label           :last_name
+        = f.text_field      :last_name
+        = f.label           :email
+        = f.text_field      :email
+        = f.label           :password
+        = f.password_field  :password
+        = f.label           :password_confirmation
+        = f.password_field  :password_confirmation
+        = f.submit
+        = link_to "Cancel", login_path, :class=>'button radius tiny alert'
