@@ -4,11 +4,18 @@ $(function() {
   //$('body').on('mouseleave','#login_form', hide_login);
   $('body').on('click', '#login_form_cancel_btn', hide_login);
   $('body').on('click', '#post_form_cancel_btn', hide_post_form);
-  $('.body').on('change', '.post', makeEditable);
+  $('body').on('change', '.post', makeEditable);
+  $('body').on('click', 'tr', show_roster);
 
   // jeditable
 
-
+  function show_roster() {
+    alert('got here');
+    $.ajax({
+      dataType: 'json',
+      url:
+    }).done();
+  }
 
   $('.edit_area').editable("http://www.example.com/save.php", {
       type      : 'textarea',

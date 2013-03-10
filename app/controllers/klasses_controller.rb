@@ -6,6 +6,7 @@ class KlassesController < ApplicationController
   def create
   end
   def show
+    @klass = Klass.find(params[:id])
   end
   def edit
   end
@@ -13,4 +14,12 @@ class KlassesController < ApplicationController
   end
   def destroy
   end
+
+  def roster
+    klass = Klass.find(params[:klass_id])
+    @roster = klass.students
+    render :json => roster
+  end
+
+
 end
