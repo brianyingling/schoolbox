@@ -1,5 +1,14 @@
 .container
   %br
   .row{:style=>'background: #fff;opacity:0.9;'}
-    .large-12.columns
-      %h1 Got here
+    .large-6.columns
+      %h4= @auth.first_name + " " + @auth.last_name
+      %div= @auth.address
+      %div= @auth.gender
+      %div= @auth.email
+    .large-6.column
+      - @auth.klasses.each do |klass|
+        %div= klass.course.name
+        %div= "Period #{klass.period}"
+        %div= 'School Year ' + klass.schoolyear
+        %br
