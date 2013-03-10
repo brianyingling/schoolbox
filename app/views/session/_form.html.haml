@@ -1,8 +1,8 @@
 #login_form.login_form
-  = form_tag login_path, :remote=>true do
+  = form_tag login_path do
     = label_tag           :email
     = text_field_tag      :email
     = label_tag           :password
     = password_field_tag  :password
-    = submit_tag "Log In", :method=>'post', :remote=>true,:class=>'button radius tiny'
+    = submit_tag "Log In", :method=>'post', :class=>'button radius tiny'
     = link_to("Cancel", nil, :id=>'login_form_cancel_btn', :class=>'button radius tiny alert')

@@ -6,7 +6,6 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def create
-    binding.pry
     @post = Post.create(params[:post])
   end
   def show
