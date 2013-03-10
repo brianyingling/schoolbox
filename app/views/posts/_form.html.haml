@@ -1,0 +1,9 @@
+.post_form.post
+  = form_tag posts_path, :remote=>true do
+    = label_tag       :title
+    = text_field_tag  "post[title]", nil
+    = label_tag       :message
+    = text_area_tag  "post[message]", nil
+    = hidden_field_tag "post[teacher_id]", @auth.id
+    = submit_tag "Create Post", :method=>'post', :remote=>true, :class=>'button success tiny'
+    = link_to "Cancel", nil, :class=>'button tiny alert', :id=>'post_form_cancel_btn'
