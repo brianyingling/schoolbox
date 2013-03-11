@@ -12,7 +12,7 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :title, :message, :postdate, :teacher_id
+  attr_accessible :title, :message, :postdate, :teacher_id, :klass_ids
   has_many :comments
   belongs_to :teacher
   has_and_belongs_to_many :klasses

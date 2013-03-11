@@ -25,7 +25,7 @@
       %h4 My Posts
       = link_to "New Post", new_post_path, :id=>'new_post_btn', :remote=>true, :class=>'button radius tiny'
       .posts
-        - @auth.posts.each do |post|
+        - @posts.each do |post|
           .post
             %h5= post.title
             .edit_area= post.message

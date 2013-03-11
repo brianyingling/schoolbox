@@ -8,7 +8,7 @@
     - @auth.courses.each do |course|
       - course.klasses.each do |klass|
         %div
-          = check_box_tag "post[period]", klass.period
+          = check_box_tag "post[klass_ids][]", klass.id
           = "#{course.name} Period #{klass.period}"
     = submit_tag "Create Post", :method=>'post', :remote=>true, :class=>'button success tiny'
     = link_to("Cancel", nil, :class=>'button tiny alert', :id=>'post_form_cancel_btn')
