@@ -5,8 +5,8 @@ class StudentsController < ApplicationController
     @student = Student.new
   end
   def create
-    Student.create(params[:student])
-    redirect_to root_path
+    student = Student.create(params[:student])
+    redirect_to student
   end
   def show
     @student = Student.find(params[:id])

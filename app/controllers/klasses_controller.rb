@@ -2,8 +2,11 @@ class KlassesController < ApplicationController
   def index
   end
   def new
+    @klass = Klass.new
   end
   def create
+    @klass = Klass.create(params[:klass])
+    redirect_to courses_path
   end
   def show
     @klass = Klass.find(params[:id])
@@ -13,6 +16,10 @@ class KlassesController < ApplicationController
   def update
   end
   def destroy
+    klass = Klass.find(params[:id])
+    klass.delete
+    binding.pry
+    redirect_to klass.course.teacher
   end
 
   def roster

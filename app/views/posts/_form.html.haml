@@ -7,7 +7,8 @@
     = hidden_field_tag "post[teacher_id]", @auth.id
     - @auth.courses.each do |course|
       - course.klasses.each do |klass|
-        %span= check_box_tag klass.period
-        = "#{course.name} Period #{klass.period}"
+        %div
+          = check_box_tag "post[period]", klass.period
+          = "#{course.name} Period #{klass.period}"
     = submit_tag "Create Post", :method=>'post', :remote=>true, :class=>'button success tiny'
     = link_to("Cancel", nil, :class=>'button tiny alert', :id=>'post_form_cancel_btn')

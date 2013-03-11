@@ -10,7 +10,6 @@ class PostsController < ApplicationController
     @post = Post.create(params[:post])
   end
   def show
-    binding.pry
   end
   def edit
   end

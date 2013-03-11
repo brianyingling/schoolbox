@@ -81,8 +81,34 @@ tr.klass:hover {
   background-color: yellow;
 }
 
+ul {
+  list-style-type: none;
+}
 
+.course_name {
+  font-size: 18px;
+}
 
+.course_name:hover {
+  background: lightblue;
+
+}
+.course_name a:hover {
+  color: #000Ω;
+}
+
+.klass:hover {
+  background: lightblue;
+}
+
+.flash_notice {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  color: #fff;
+  background: #FF0000;
+  font-weight: bold;
+}
 
 
 

@@ -1,5 +1,7 @@
 #login_form.login_form
-  = form_tag login_path, :remote=>true do
+  - if flash[:notice].present?
+    .flash_notice= flash[:notice]
+  = form_tag login_path do
     = label_tag           :email
     = text_field_tag      :email
     = label_tag           :password
