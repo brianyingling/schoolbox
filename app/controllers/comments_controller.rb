@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
   def create
-    binding.pry
     comment = Comment.create(params[:comment])
     redirect_to comment.student
   end
