@@ -1,0 +1,21 @@
+.container
+  %br
+  .row{:style=>'background:#fff;opacity:0.9;'}
+    .large-6.columns
+      %h3= @post.title
+      %div= @post.message
+      %div= "Posted on #{@post.created_at}"
+      %h4 New Comment:
+      = form_for @comment do |f|
+        = f.text_area       :text
+        = hidden_field_tag  "comment[post_id]", @post.id
+        = hidden_field_tag  "comment[student_id]", @student.id
+        = f.submit          :submit
+    .large-6.columns
+      %h4 Comments:
+      - @post.comments.each do |comment|
+        .comment
+          %div= comment.text
+          %div= "Posted by #{comment.student.name} on #{comment.created_at}"
+
+

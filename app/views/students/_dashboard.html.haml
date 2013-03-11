@@ -1,27 +1,30 @@
 .container
-%br
-.row{:style=>'background:#fff;'}
-  .large-12.columns
-    %h3= "Welcome, #{@student.first_name} #{@student.last_name}"
-.row{:style=>'background:#fff;'}
-  .large-3.columns
-    %h4 My Courses
-    - @student.klasses.each do |klass|
-      .course_name= klass.course.name
-  .large-9.columns
-    %h4 Course Posts
-    - @student.klasses.each do |klass|
-      %div= klass.course.name
-      - klass.posts.each do |post|
-        .post= post.title
-        - post.comments.each do |comment|
-          .comment
-            %div= comment.text
-            %div= "Posted by #{comment.student.name} on #{comment.created_at}"
-        = link_to "New Comment", new_comment_path, :class=>'button radius tiny'
-    / - @student.comments.each do |comment|
-    /   %div= comment.post.title
-    /   %div= "Posted by #{comment.post.teacher.name}"
-    /   %div= comment.post.message
-    /   %div= comment.text
-    /   %div= comment.created_at
+  %br
+  .row{:style=>'background:#fff;'}
+    .large-12.columns
+      %h3= "Welcome, #{@student.first_name} #{@student.last_name}"
+  .row{:style=>'background:#fff;'}
+    .large-3.columns
+      %h4 My Courses
+      - @student.klasses.each do |klass|
+        .course_name= klass.course.name
+    .large-9.columns
+      %h4 Course Posts
+      - @student.klasses.each do |klass|
+        %div= klass.course.name
+        - klass.posts.each do |post|
+          .post= post.title
+          - post.comments.each do |comment|
+            .comment
+              %div= comment.text
+              %div= "Posted by #{comment.student.name} on #{comment.created_at}"
+          = form_tag new_comment_path, :method=>'get' do
+            = hidden_field_tag "post_id", post.id
+            = hidden_field_tag "student_id", @student.id
+            = button_to "New Comment", new_comment_path, :class=>'button radius tiny'
+      / - @student.comments.each do |comment|
+      /   %div= comment.post.title
+      /   %div= "Posted by #{comment.post.teacher.name}"
+      /   %div= comment.post.message
+      /   %div= comment.text
+      /   %div= comment.created_at
