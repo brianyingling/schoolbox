@@ -17,7 +17,7 @@
       - @course.klasses.each do |klass|
         %tr.klass
           %td= klass.schoolyear
-          %td= link_to klass.course.name, klass
+          %td= link_to(klass.course.name, klass)
           %td= klass.period
           %td= klass.students.count
           = hidden_field_tag 'klass_id',klass.id

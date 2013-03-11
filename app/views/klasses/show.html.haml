@@ -1,10 +1,10 @@
-%script
-  $('body').css('background','#fff');
 .container
-  .row
-    %h4= "Student Roster for #{@klass.course.name}"
-    %h5= "Period #{@klass.period}"
-  .row
+  %br
+  .row{:style=>'background:#fff;opacity:0.9;border-radius:15px;'}
+    .large-12.columns
+      %h4= "Student Roster for #{@klass.course.name}"
+      %h5= "Period #{@klass.period}"
+  .row{:style=>'background:#fff;opacity:0.9;'}
     .large-12.columns
       %table
         %tr
@@ -15,8 +15,8 @@
           %td Email
         - @klass.students.each do |student|
           %tr
-            %td= student.first_name
-            %td= student.last_name
+            %td= link_to student.first_name, student
+            %td= link_to student.last_name, student
             %td= student.gender
             %td= student.address
             %td= student.email

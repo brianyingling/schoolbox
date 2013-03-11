@@ -1,0 +1,17 @@
+.container
+  %br
+  .row{:style=>'background:#fff;opacity:0.9;'}
+    .large-12.columns
+      %h3 My Classes
+      %table
+        %tr
+          %td School Year
+          %td Name
+          %td Period
+          %td Teacher
+        - @auth.klasses.each do |klass|
+          %tr
+            %td= klass.schoolyear
+            %td= link_to klass.course.name, klass.course
+            %td= klass.period
+            %td= link_to klass.course.teacher.first_name + " " + klass.course.teacher.last_name, klass.course.teacher

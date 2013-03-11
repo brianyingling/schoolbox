@@ -9,6 +9,7 @@ class StudentsController < ApplicationController
     redirect_to root_path
   end
   def show
+    @student = Student.find(params[:id])
   end
   def edit
   end

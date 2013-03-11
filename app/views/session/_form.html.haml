@@ -1,5 +1,5 @@
 #login_form.login_form
-  = form_tag login_path do
+  = form_tag login_path, :remote=>true do
     = label_tag           :email
     = text_field_tag      :email
     = label_tag           :password

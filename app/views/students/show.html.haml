@@ -2,13 +2,14 @@
   %br
   .row{:style=>'background: #fff;opacity:0.9;'}
     .large-6.columns
-      %h4= @auth.first_name + " " + @auth.last_name
-      %div= @auth.address
-      %div= @auth.gender
-      %div= @auth.email
+      %h4= @student.first_name + " " + @student.last_name
+      %div= @student.address
+      %div= @student.gender
+      %div= @student.email
     .large-6.column
-      - @auth.klasses.each do |klass|
-        %div= klass.course.name
+      %h5 Courses
+      - @student.klasses.each do |klass|
+        %div= link_to klass.course.name, klass.course
         %div= "Period #{klass.period}"
         %div= 'School Year ' + klass.schoolyear
         %br

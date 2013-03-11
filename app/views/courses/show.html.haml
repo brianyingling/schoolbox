@@ -1,11 +1,13 @@
-.row
+
+%br
+.row{:style=>'background:#fff;'}
   .large-12.columns
     %h2= @course.name
     %h5 Teacher:
     %h5= @course.teacher.first_name + " " + @course.teacher.last_name
     %h5 Description:
     %p= @course.description
-.row
+.row{:style=>'background:#fff;'}
   .large-6.columns
     %h5 Classes Offered:
     %table
@@ -17,7 +19,7 @@
       - @course.klasses.each do |klass|
         %tr.klass
           %td= klass.schoolyear
-          %td= link_to klass.course.name, klass_path
+          %td= link_to klass.course.name, klass
           %td= klass.period
           %td= klass.students.count
           = hidden_field_tag 'id',klass.id

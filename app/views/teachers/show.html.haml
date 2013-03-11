@@ -9,7 +9,7 @@
       %h4 My Courses
       %ul
       - @auth.courses.each do |course|
-        = link_to course.name, course_path, :remote=>true
+        = link_to course.name, course, :remote=>true
     .large-9.columns.dividers
       %h4 My Posts
       = link_to "New Post", new_post_path, :id=>'new_post_btn', :remote=>true, :class=>'button radius tiny'

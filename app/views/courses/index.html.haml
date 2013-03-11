@@ -1,15 +1,22 @@
 .container
 %br
-.row{:style=>'background:#fff,opacity:0.9;'}
+.row{:style=>'background:#fff;opacity:0.9;'}
   .large-12.columns
     %h3 My Courses
+    = link_to "New Course", new_course_path, :class=>'button radius tiny'
     %table
       %tr
         %td Name
         %td Teacher
         %td Description
+        %td Periods
+        %td Actions
       - @courses.each do |course|
         %tr
           %td= link_to course.name, course
           %td= link_to("#{course.teacher.first_name + " " + course.teacher.last_name}", course.teacher)
           %td= course.description
+          %td= course.klasses.map(&:period)
+          %td
+            = link_to "Edit", nil, :class=>'button radius tiny'
+            = link_to "Delete", course, :method=>'delete', :class=>'button radius tiny alert'

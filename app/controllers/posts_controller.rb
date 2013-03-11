@@ -3,8 +3,8 @@ class PostsController < ApplicationController
     @posts = @auth.posts.order('created_at desc')
   end
   def new
-    @post = Post.new
     @klasses = @auth.courses.map {|course| course.klasses }
+    @post = Post.new
   end
   def create
     @post = Post.create(params[:post])

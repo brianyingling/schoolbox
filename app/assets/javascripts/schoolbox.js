@@ -10,11 +10,10 @@ $(function() {
   // jeditable
 
   function show_roster() {
-    alert('got here');
     $.ajax({
       dataType: 'json',
-      url:
-    }).done();
+      url:''
+    }).done({});
   }
 
   $('.edit_area').editable("http://www.example.com/save.php", {

@@ -9,9 +9,10 @@ class TeachersController < ApplicationController
     redirect_to root_path
   end
   def show
-    # respond_to do |format|
-    #   format.html
-    # end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   def edit
   end

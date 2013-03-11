@@ -1,8 +1,8 @@
-  <nav class="top-bar fixed">
+  <nav class="top-bar">
     <ul class="title-area">
       <!-- Title Area -->
       <li class="name">
-        <h1><a href="#">Schoolbox</a></h1>
+        <h1><%= link_to "Schoolbox", root_path %></a></h1>
       </li>
       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -21,7 +21,7 @@
               <li><a href="#">Dropdown Level 2b</a></li>
             </ul></li>
           <li class="divider"></li>
-          <li><a href="">My Courses</a></li>
+          <li><%= link_to "My Courses", courses_path %></li>
           <li class="divider"></li>
         <% end %>
         <% if @auth.nil? %>
