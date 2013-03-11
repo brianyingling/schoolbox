@@ -1,0 +1,7 @@
+.post
+  %h5= @post.title
+  .edit_area= @post.message
+  %p= @post.created_at
+  = hidden_field_tag @auth.id
+  = link_to "Edit", nil, :class=>'button radius tiny'
+  = link_to "Delete", @post, :method=>'delete', :class=>'button radius tiny alert'

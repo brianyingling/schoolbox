@@ -8,6 +8,8 @@ class PostsController < ApplicationController
   end
   def create
     @post = Post.create(params[:post])
+    @post.postdate = Time.now
+    @post.save
   end
   def show
   end
