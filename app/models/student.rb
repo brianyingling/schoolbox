@@ -21,4 +21,8 @@ class Student < ActiveRecord::Base
   has_many :comments
   validates :username, :uniqueness => true
   validates :email, :uniqueness => true
+
+  def name
+    "#{self.first_name} #{self.last_name}"
+  end
 end

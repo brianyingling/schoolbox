@@ -75,6 +75,14 @@ s1.comments << cmt1
 s2.comments << cmt2
 s3.comments << cmt3
 
+k1.posts << p1
+k1.posts << p2
+k2.posts << p1
+k2.posts << p2
+k3.posts << p1
+k3.posts << p2
+
+
 
 
 
