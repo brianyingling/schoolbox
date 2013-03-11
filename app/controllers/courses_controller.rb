@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   def index
+    @courses = @auth.courses.order(:name)
   end
   def new
   end

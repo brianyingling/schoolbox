@@ -1,0 +1,15 @@
+.container
+%br
+.row{:style=>'background:#fff,opacity:0.9;'}
+  .large-12.columns
+    %h3 My Courses
+    %table
+      %tr
+        %td Name
+        %td Teacher
+        %td Description
+      - @courses.each do |course|
+        %tr
+          %td= link_to course.name, course
+          %td= link_to("#{course.teacher.first_name + " " + course.teacher.last_name}", course.teacher)
+          %td= course.description
