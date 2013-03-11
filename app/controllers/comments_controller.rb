@@ -10,4 +10,20 @@ class CommentsController < ApplicationController
     comment = Comment.create(params[:comment])
     redirect_to comment.student
   end
+  def edit
+    @comment = Comment.find(params[:id])
+    @student = @comment.student
+    @post = @comment.post
+    render :new
+  end
+  def update
+    comment = Comment.find(params[:id])
+    comment.update_attributes(params[:comment])
+    redirect_to Student.find(params[:comment][:student_id])
+  end
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.delete
+    redirect_to comment.student
+  end
 end

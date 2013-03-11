@@ -18,6 +18,10 @@
             .comment
               %div= comment.text
               %div= "Posted by #{comment.student.name} on #{comment.created_at}"
+              - if @auth.id == comment.student.id
+                =link_to 'Edit', edit_comment_path(comment), :class=>'button radius tiny'
+                =link_to 'Delete', comment, :method=>'delete', :class=>'button radius tiny alert', :confirm=>'Are you sure?'
+
           = form_tag new_comment_path, :method=>'get' do
             = hidden_field_tag "post_id", post.id
             = hidden_field_tag "student_id", @student.id

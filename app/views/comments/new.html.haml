@@ -10,7 +10,7 @@
         = f.text_area       :text
         = hidden_field_tag  "comment[post_id]", @post.id
         = hidden_field_tag  "comment[student_id]", @student.id
-        = f.submit          :submit
+        = f.submit          :save
     .large-6.columns
       %h4 Comments:
       - @post.comments.each do |comment|
