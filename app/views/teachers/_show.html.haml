@@ -17,7 +17,7 @@
             %td= link_to "Period #{klass.period}", klass
             %td
               = link_to "Edit", nil
-              = link_to "Delete", klass, :method=>'delete', :confirm=>'Are you sure?'
+              = link_to "Delete", klass, :method=>'delete'
       = link_to "New Class", new_klass_path, :class=>'button radius tiny'
   .large-9.columns.dividers
     %h4 My Posts
@@ -30,7 +30,7 @@
           %p= post.created_at
           = hidden_field_tag @auth.id
           = link_to "Edit", nil, :class=>'button radius tiny'
-          = link_to "Delete", post, :method=>'delete', :class=>'button radius tiny alert', :confirm=>'Are you sure?'
+          = link_to "Delete", post, :method=>'delete', :class=>'button radius tiny alert'
         - post.comments.each do |comment|
           .comment
             %h6= comment.text

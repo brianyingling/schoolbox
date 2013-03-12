@@ -14,16 +14,8 @@
         <li class="divider"></li>
         <li class="active"><a href="<%= root_path %>">Home</a></li>
         <li class="divider"></li>
-        <% if @auth.present? && @auth.is_a?(Teacher) %>
-          <li class="has-dropdown"><%= link_to "Teachers", teachers_path %>
-            <ul class="dropdown">
-              <li><a href="#">Dropdown Level 2a</a></li>
-              <li><a href="#">Dropdown Level 2b</a></li>
-            </ul></li>
-          <li class="divider"></li>
-          <li><%= link_to "My Courses", courses_path %></li>
-          <li class="divider"></li>
-        <% end %>
+        <li><%= link_to "My Courses", courses_path %></li>
+        <li class="divider"></li>
         <% if @auth.nil? %>
           <li class='has-dropdown'><a href="">Register</a>
             <ul class='dropdown'>
