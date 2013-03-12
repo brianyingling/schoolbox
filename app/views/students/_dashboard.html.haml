@@ -21,10 +21,10 @@
                 %div= "Posted by #{comment.student.name} on #{comment.created_at}"
                 - if @auth.id == comment.student.id
                   =link_to 'Edit', edit_comment_path(comment), :class=>'button radius tiny'
-                  =link_to 'Delete', comment, :method=>'delete', :class=>'button radius tiny alert', :confirm=>'Are you sure?'
+                  =link_to 'Delete', comment, :method=>'delete', :class=>'button radius tiny alert'
 
-            = form_tag new_comment_path, :method=>'get' do
+            = form_tag new_comment_path, :method=>'get', :remote=>true do
               = hidden_field_tag "post_id", post.id
               = hidden_field_tag "student_id", @student.id
-              = button_to "New Comment", new_comment_path, :class=>'button radius tiny'
+              = button_to "New Comment", new_comment_path, :class=>'button radius tiny new_comment_btn', :value=>post.id
 

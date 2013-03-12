@@ -6,8 +6,21 @@ $(function() {
   $('body').on('click', '#post_form_cancel_btn', hide_post_form);
   $('body').on('change', '.post', makeEditable);
   $('body').on('click', 'tr', show_roster);
+  $('#comments').on('click', '.new_comment_btn', show_comment_form);
+  $('body').on('click', '.new_comment_cancel_btn',hide_comment_form);
 
   // jeditable
+  function show_comment_form() {
+    // $('#new_comment_form').fadeIn();
+    return false;
+  }
+
+  function hide_comment_form() {
+    $('.new_comment_form').slideUp();
+    $('.new_comment_btn').show();
+    return false;
+  }
+
 
   function show_roster() {
     $.ajax({
