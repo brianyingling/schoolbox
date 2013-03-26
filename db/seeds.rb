@@ -83,6 +83,31 @@ k3.posts << p1
 k3.posts << p2
 
 
+##### Seeding GA Immersive Class
+chyld = Teacher.create(:username=>'chyld',:email=>'chyld@chyld.com',:first_name=>"Chyld",:last_name=>'Medford',:password=>'chyld',:password_confirmation=>'chyld')
+
+ga1 = Student.create(:username=>'brian',:email=>'byingling@gmail ',:password=>'brian',:password_confirmation=>'brian', :first_name=>'Brian',:last_name=>'Yingling',:address=>'2 Orston Rd, Parsippany, NJ')
+ga2 = Student.create(:username=>'bryan',:email=>'byingling@gmail',:password=>'bryan',:password_confirmation=>'bryan', :first_name=>'Bryan',:last_name=>'Reid',:address=>'10 E 21st St, NY, NY')
+ga3 = Student.create(:username=>'tony',:email=>'tony.conteres@gmail.com',:password=>'tony',:password_confirmation=>'tony', :first_name=>'Tony',:last_name=>'Conteres',:address=>'10 E 21st St, NY, NY')
+ga4 = Student.create(:username=>'ralph',:email=>'ralphbernardo@gmail',:password=>'ralph',:password_confirmation=>'ralph', :first_name=>'Ralph',:last_name=>'Bernardo',:address=>'10 E 21st St, NY, NY')
+ga5 = Student.create(:username=>'alex',:email=>'afogg@gmail.com',:password=>'alex',:password_confirmation=>'alex', :first_name=>'Alex',:last_name=>'Fogg',:address=>'10 E 21st St, NY, NY')
+ga6 = Student.create(:username=>'chloe',:email=>'chloestineorf@gmail.com',:password=>'chloe',:password_confirmation=>'chloe', :first_name=>'Chloe',:last_name=>'Stineorf',:address=>'10 E 21st St, NY, NY')
+ga7 = Student.create(:username=>'shefali',:email=>'shefali@gmail.com',:password=>'shefali',:password_confirmation=>'shefali', :first_name=>'Shefali',:last_name=>'Iforgetyourlastname',:address=>'10 E 21st St')
+ga8 = Student.create(:username=>'jeff',:email=>'jeff@somethingorother.com',:password=>'jeff',:password_confirmation=>'jeff', :first_name=>'Jeff',:last_name=>'SorryIForget',:address=>'10 E 21st St, NY, NY')
+ga9 = Student.create(:username=>'matt',:email=>'matt@gmail.com',:password=>'matt',:password_confirmation=>'matt', :first_name=>'Matt',:last_name=>'LikesMotorcycles',:address=>'10 E 21st St, NY, NY')
+ga10 = Student.create(:username=>'ben',:email=>'ben@brown.edu',:password=>'ben',:password_confirmation=>'ben', :first_name=>'Ben',:last_name=>'Clayman',:address=>'10 E 21st St, NY, NY')
+ga11 = Student.create(:username=>'adi',:email=>'adi@somethingorother',:password=>'adi',:password_confirmation=>'adi', :first_name=>'Adi',:last_name=>'Singh',:address=>'10 E 21st St, NY, NY')
+ga12 = Student.create(:username=>'simon',:email=>'simon@simon.com',:password=>'simon',:password_confirmation=>'simon', :first_name=>'Simon',:last_name=>'Garfunkel',:address=>'10 E 21st St, NY, NY')
+ga13 = Student.create(:username=>'luke',:email=>'luke@gmail.com',:password=>'luke',:password_confirmation=>'luke', :first_name=>'Luke',:last_name=>'IAmYourFather',:address=>'10 E 21st St')
+ga14 = Student.create(:username=>'stephen',:email=>'stephen@stephen.com',:password=>'stephen',:password_confirmation=>'stephen', :first_name=>'Stephen',:last_name=>'Rae',:address=>'10 E 21st St, NY, NY')
+ga15 = Student.create(:username=>'matt',:email=>'matt@gmail.com',:password=>'matt',:password_confirmation=>'matt', :first_name=>'Matt',:last_name=>'LikesMotorcycles',:address=>'10 E 21st St, NY, NY')
+ga16 = Student.create(:username=>'sandip',:email=>'sandip@somethingorother.com',:password=>'sandip',:password_confirmation=>'sandip', :first_name=>'Sandip',:last_name=>'Sandip',:address=>'10 E 21st St, NY, NY')
+
+
+k3.students << ga1 << ga2 << ga3 << ga4 << ga5 << ga6 << ga7 << ga8 << ga9 << ga10
+
+
+
 
 
 

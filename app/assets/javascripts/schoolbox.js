@@ -1,7 +1,6 @@
 $(function() {
 
   $('#login_btn_nav').click(show_login);
-  //$('body').on('mouseleave','#login_form', hide_login);
   $('body').on('click', '#login_form_cancel_btn', hide_login);
   $('body').on('click', '#post_form_cancel_btn', hide_post_form);
   $('body').on('change', '.post', makeEditable);
@@ -11,7 +10,8 @@ $(function() {
 
   // jeditable
   function show_comment_form() {
-    // $('#new_comment_form').fadeIn();
+    $(this).parent().parent().parent().remove();
+    $(this).parent().parent().parent().append("<%= j render :partial=>'form' %>");
     return false;
   }
 
@@ -29,8 +29,9 @@ $(function() {
     }).done({});
   }
 
-  $('.edit_area').editable("http://www.example.com/save.php", {
+  $('.edit_area').editable("/posts/116/update", {
       type      : 'textarea',
+      method    : 'put',
       cancel    : 'Cancel',
       submit    : 'OK',
       tooltip   : 'Click to edit...'
@@ -39,7 +40,7 @@ $(function() {
 });
 
 function makeEditable() {
-  $('.edit').editable('http://www.example.com/save.php', {
+  $('.edit').editable('http://localhost/teachers/42/edit', {
       indicator : 'Saving...',
       tooltip   : 'Click to edit...'
   });

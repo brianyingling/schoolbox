@@ -14,8 +14,13 @@ class PostsController < ApplicationController
   def show
   end
   def edit
+    @post = Post.find(params[:id])
+    render :new
   end
   def update
+    post = Post.find(params[:id])
+    post.update_attributes(params[:post])
+    redirect_to post.teacher
   end
   def destroy
     post = Post.find(params[:id])

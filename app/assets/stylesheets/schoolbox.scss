@@ -65,12 +65,24 @@ body {
   box-shadow: 5px 5px 25px gray;
 }
 
+.post-title {
+  font-weight: bold;
+}
+
 .comment {
   background-color: beige;
   margin: 5px 0 5px 5px;
   padding: 5px 0 5px 10px;
   box-shadow: 5px 5px 25px gray;
   border-radius: 5px;
+}
+.comment_text {
+  padding: 5px 5px 10px 5px;
+}
+
+.timestamp {
+  padding: 5px;
+  font-style: italic;
 }
 
 footer {
@@ -118,6 +130,23 @@ ul {
   font-weight: bold;
 }
 
+.edit_area {
+  margin-bottom: 20px;
+}
 
+h5 {
+  border-bottom: 1px solid black;
+}
+
+.post_meta {
+  font-style: italic;
+  padding-bottom: 20px;
+}
+
+#new_comment_btn {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
 
 

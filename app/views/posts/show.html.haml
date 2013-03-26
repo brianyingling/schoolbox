@@ -6,8 +6,8 @@
       - @auth.posts.each do |post|
         .post
           %h5= post.title
+          .post_meta= post.created_at.to_datetime.strftime('%A, %B %d %Y')
           .edit_area= post.message
-          %p= post.created_at
           = hidden_field_tag @auth.id
           = button_tag "Edit", nil
           = link_to "Delete", post, :method=>'delete', :class=>'button', :confirm=>'Are you sure?'

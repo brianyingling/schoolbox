@@ -9,7 +9,7 @@ class TeachersController < ApplicationController
     redirect_to root_path
   end
   def show
-    @posts = @auth.posts.order('created_at desc')
+    @posts = @auth.posts.order('updated_at desc')
     respond_to do |format|
       format.html
       format.js

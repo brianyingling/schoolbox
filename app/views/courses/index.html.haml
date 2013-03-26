@@ -16,7 +16,8 @@
           %td= link_to course.name, course
           %td= link_to("#{course.teacher.first_name + " " + course.teacher.last_name}", course.teacher)
           %td= course.description
-          %td= course.klasses.map(&:period)
+          %td= course.klasses.map(&:period).join(', ')
           %td
-            = link_to "Edit", nil, :class=>'button radius tiny'
+            = hidden_field_tag :id=>"course_id", :value=>course.id
+            = link_to "Edit", edit_course_path(course.id), :class=>'button radius tiny'
             = link_to "Delete", course, :method=>'delete', :class=>'button radius tiny alert'

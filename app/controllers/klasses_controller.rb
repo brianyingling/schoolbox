@@ -18,7 +18,6 @@ class KlassesController < ApplicationController
   def destroy
     klass = Klass.find(params[:id])
     klass.delete
-    binding.pry
     redirect_to klass.course.teacher
   end
 

@@ -28,16 +28,17 @@
         - @posts.each do |post|
           .post
             %h5= post.title
+            .post_meta= "Posted on " + post.created_at.to_datetime.strftime('%A, %B %d %Y') + " in " + post.klasses.map {|klass| klass.course.name}.uniq.join(', ')
             .edit_area= post.message
-            %p= "Posted at " + post.created_at.to_datetime.strftime('%A, %B %d %Y')
+
             = hidden_field_tag @auth.id
-            = link_to "Edit", nil, :class=>'button radius tiny'
+            = link_to "Edit", edit_post_path(post.id), :remote=>true, :class=>'button radius tiny'
             = link_to "Delete", post, :method=>'delete', :class=>'button radius tiny alert'
           - post.comments.each do |comment|
             .comment
               %h6= comment.text
               %p= "Posted by #{comment.student.first_name} #{comment.student.last_name}"
-              %p= comment.created_at
+              %p= comment.created_at.to_datetime.strftime('%A, %B %d %Y') + " in " + post.klasses.map {|klass| klass.course.name}.uniq.join(', ')
 
 
 
