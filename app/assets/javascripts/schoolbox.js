@@ -10,8 +10,8 @@ $(function() {
 
   // jeditable
   function show_comment_form() {
-    $(this).parent().parent().parent().remove();
-    $(this).parent().parent().parent().append("<%= j render :partial=>'form' %>");
+    //$(this).parent().parent().parent().remove();
+    // $(this).parent().parent().parent().append("<%= j render :partial=>'form' %>");
     return false;
   }
 

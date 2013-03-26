@@ -15,6 +15,7 @@
 //= require 'underscore.js'
 //= require 'jeditable.min.js'
 //= require 'jquery.editable-1.0.1.js'
+//= require 'jquery-ui-1.10.2/ui/jquery-ui.js'
 //= require 'foundation4/js/foundation.min.js'
 //= require 'schoolbox.js'
 

@@ -5,7 +5,6 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'haml'
 gem 'bcrypt-ruby'
-gem 'yahoofinance'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -13,6 +12,13 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
   gem 'pry-rails'
   gem 'pry-debugger'
   gem 'pry-stack_explorer'
