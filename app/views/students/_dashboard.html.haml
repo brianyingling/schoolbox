@@ -7,7 +7,7 @@
       %div{:style=>'border:1px solid black;'}
         %h4 My Schedule
         %ul
-          - @student.klasses.order(:period).each do |klass|
+        - @student.klasses.order(:period).each do |klass|
             %li
               = klass.course.name
               = "Period #{klass.period}"
