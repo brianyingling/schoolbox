@@ -1,10 +1,9 @@
 
 %br
 .row{:style=>'background:#fff;'}
-  .large-12.columns
+  .large-6.columns
     %h2= @course.name
-    %h5 Teacher:
-    %h5= @course.teacher.first_name + " " + @course.teacher.last_name
+    %h5{:style=>'border: 0;'}= "Teacher: #{@course.teacher.first_name} #{@course.teacher.last_name}"
     %h5 Description:
     %p= @course.description
 .row{:style=>'background:#fff;'}

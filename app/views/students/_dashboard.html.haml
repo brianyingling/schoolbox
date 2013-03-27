@@ -10,23 +10,26 @@
         .course_name= link_to klass.course.name, klass.course
     .large-9.columns
       %h4 Course Posts
-      - @student.klasses.each do |klass|
+      - @student.klasses.each_with_index do |klass, k|
+        %h1= k
         .course
           %h4= klass.course.name
-          - klass.posts.each_with_index do |post, i|
+          - klass.posts.each_with_index do |post, p|
             .post
               %h5= post.title
               %div= post.message
               #comments
                 - post.comments.each do |comment|
+                  %h1= p
                   .comment
                     .comment_text= comment.text
                     .timestamp= "Posted by #{comment.student.name} on #{comment.created_at.to_datetime.strftime('%A, %B %d %Y')}"
                     - if @auth.id == comment.student.id
-                      =link_to 'Edit', edit_comment_path(comment), :remote=>true, :class=>'button radius tiny'
+                      =link_to 'Edit', edit_comment_path(comment), :remote=>true, :class=>'button radius tiny', :id=>"edit_comment_btn_#{comment.id}"
                       =link_to 'Delete', comment, :method=>'delete', :class=>'button radius tiny alert'
 
                 = form_tag new_comment_path, :method=>'get', :remote=>true do
                   = hidden_field_tag "post_id", post.id
                   = hidden_field_tag "student_id", @student.id
-                  = button_to "New Comment", new_comment_path, :class=>'button radius tiny new_comment_btn', :id=>"new_comment_btn_#{post.id}", :value=>post.id, :remote=>true
+                  = hidden_field_tag 'kp', "#{k.to_s+p.to_s}"
+                  = button_to "New Comment", new_comment_path, :class=>'button radius tiny new_comment_btn', :id=>"new_comment_btn_#{k.to_s+p.to_s}", :value=>post.id, :remote=>true

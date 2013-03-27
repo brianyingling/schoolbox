@@ -13,9 +13,9 @@ Post.delete_all
 Comment.delete_all
 Calendar.delete_all
 
-c1 = Course.create(:name=>'US History I', :description=>'This is US History I. It is intensive.')
-c2 = Course.create(:name=>'World History', :description=>'This is world history. It is intensive.')
-c3 = Course.create(:name=>'GA Web Development Immersive', :description=>'This is WDI. It is immersive.')
+c1 = Course.create(:name=>'US History I', :description=>'This is US History I. This course covers from the early Colonial America period to the end of World War I. It reviews concepts that coorespond to the foundation of the Republic, the impact of slavery leading up to the Civil War and industrialization in the late 1800s-early 1900s. This course is geared towards sophomores.')
+c2 = Course.create(:name=>'World History', :description=>'This is world history. This course takes a thematic approach to studying the world. The first quarter discusses revolutionary ideas that occurred during the Reformation and the French Revolution, Middle Eastern themes, topics in East Asia, and lastly totalitarianism and World Wars I and II.')
+c3 = Course.create(:name=>'GA Web Development Immersive', :description=>'This is WDI. It is immersive. We learn everything from the basics of programming using Ruby, the inner workings of a small web framework called Sinatra, and later students move towards Ruby on Rails. Topics also include computer science theory, test driven development, and the latest front-end development techniques using JavaScript.')
 
 t1 = Teacher.create(:username=>'myingling',:email=>'m_rogers3@hotmail.com',:first_name=>"Melissa",:last_name=>'Yingling',:password=>'myingling',:password_confirmation=>'myingling')
 t2 = Teacher.create(:username=>'byingling',:email=>'byingling@gmail.com',:first_name=>"Brian",:last_name=>'Yingling',:password=>'byingling',:password_confirmation=>'byingling')

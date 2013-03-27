@@ -1,0 +1,2 @@
+console.log($("#edit_comment_btn_<%=j @comment_id.to_s %>")[0]);
+$("#edit_comment_btn_<%=j @comment_id.to_s %>").parent().remove().append("<%=j render :partial=>'form'%>");

@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def index
   end
   def new
+    @p = params[:kp]
     @post_id = params[:post_id]
     @post = Post.find(params[:post_id])
     @student = Student.find(params[:student_id])
@@ -16,7 +17,8 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @student = @comment.student
     @post = @comment.post
-    render :new
+    @comment_id = @comment.id
+    # render :new
   end
   def update
     comment = Comment.find(params[:id])
