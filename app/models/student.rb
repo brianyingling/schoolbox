@@ -12,6 +12,7 @@
 #  updated_at      :datetime         not null
 #  gender          :string(255)
 #  email           :string(255)
+#  klass_id        :integer
 #
 
 class Student < ActiveRecord::Base

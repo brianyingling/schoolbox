@@ -13,17 +13,14 @@
 #  prefix          :string(255)
 #
 
-class Teacher < ActiveRecord::Base
-  attr_accessible :username, :email, :prefix, :first_name, :last_name, :password, :password_confirmation
-  has_secure_password
-  has_many :posts
-  has_many :courses
-  has_many :klasses, :through=> :courses
-  validates :username, :uniqueness =>true
-  validates :email, :uniqueness => true
-
-  def name
-    "#{self.prefix} #{self.last_name}"
+FactoryGirl.define do
+  factory :teacher, class: Teacher do
+    username                'byingling'
+    email                   'byingling@gmail.com'
+    first_name              'Brian'
+    last_name               'Yingling'
+    password                'byingling'
+    password_confirmation   'byingling'
+    # prefix                  'Mr.'
   end
-
 end
