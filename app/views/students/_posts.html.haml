@@ -1,0 +1,7 @@
+- @student.klasses.each do |klass|
+  %div= klass.course.name
+  - klass.posts.each do |post|
+    %div= post.title
+    %div= post.message
+    %div= "#{post.comments.count} comments"
+    %br
