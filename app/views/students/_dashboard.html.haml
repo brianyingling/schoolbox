@@ -3,8 +3,14 @@
     .large-3.columns
       %div{:style=>'border:1px solid black;'}
         %h4 Calendar
+
       %div{:style=>'border:1px solid black;'}
         %h4 My Schedule
+        %ul
+          - @student.klasses.order(:period).each do |klass|
+            %li
+              = klass.course.name
+              = "Period #{klass.period}"
     .large-6.columns
       %div{:style=>'border:1px solid black;'}
         %h4 Discussion Questions
