@@ -1,0 +1,7 @@
+- @auth.klasses.each do |klass|
+  - klass.posts.each do |post|
+    %div= post.title
+    %div= "Posted for #{klass.course.name} on #{post.postdate}"
+    %div= post.message
+    %div= "#{post.comments.count} comments"
+    %br

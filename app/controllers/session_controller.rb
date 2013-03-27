@@ -11,7 +11,8 @@ class SessionController < ApplicationController
       else
         session[:student_id] = @user.id
       end
-      redirect_to @user
+      # redirect_to @user
+      redirect_to dashboard_path
     else
       flash[:notice] = "Incorrect Login. Please try again"
       redirect_to login_path

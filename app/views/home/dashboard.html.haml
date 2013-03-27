@@ -1,0 +1,24 @@
+.page
+  .row
+    .large-3.columns
+      %div{:style=>'border:1px solid black;'}
+        %h4 Calendar
+
+      %div{:style=>'border:1px solid black;'}
+        %h4 My Schedule
+        %ul
+          - @auth.klasses.order(:period).each do |klass|
+            %li
+              = klass.course.name
+              = "Period #{klass.period}"
+    .large-6.columns
+      %div{:style=>'border:1px solid black;'}
+        %h4 Discussion Questions
+        = render :partial=>'shared/posts'
+    .large-3.columns
+      %div{:style=>'border:1px solid black;'}
+        %h4 My Notes
+      %div{:style=>'border:1px solid black;'}
+        %h4 Upcoming Events
+      %div{:style=>'border:1px solid black;'}
+        %h4 My Grades
