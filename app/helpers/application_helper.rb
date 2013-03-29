@@ -32,6 +32,7 @@ module ApplicationHelper
       nav += "<li><label>Important Info</label></li>"
       nav += "<li>"+ link_to("Account Settings", '#', :id=>'account_settings_btn') + "</li>"
       nav += "<li>"+ link_to("View All Teachers", teachers_path) + "</li>"
+      nav += "<li>"+ link_to("View All Students", students_path) + "</li>"
     end
     nav
   end

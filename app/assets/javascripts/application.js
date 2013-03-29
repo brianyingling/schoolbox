@@ -20,4 +20,5 @@
 //= require 'foundation4/js/foundation.min.js'
 //= require 'schoolbox.js'
 //= require 'teacher.js'
+//= require 'student.js'
 
