@@ -22,8 +22,19 @@ module ApplicationHelper
           nav += "<ul class='dropdown'>"
           nav += "<li><a href='#' class=''>Add Assignment</a></li>"
           nav += "<li><a href='#' class=''>View Assignment</a></li></ul>"
-
     end
     nav
   end
+
+  def teacher_settings_nav
+    nav = ''
+    if @auth.is_a?(Teacher)
+      nav += "<li><label>Important Info</label></li>"
+      nav += "<li>"+ link_to("Account Settings", '#', :id=>'account_settings_btn') + "</li>"
+      nav += "<li>"+ link_to("View All Teachers", teachers_path) + "</li>"
+    end
+    nav
+  end
+
+
 end
