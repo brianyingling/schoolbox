@@ -12,6 +12,8 @@ class KlassesController < ApplicationController
     @klass = Klass.find(params[:id])
   end
   def edit
+    @klass = Klass.find(params[:id])
+    render :new
   end
   def update
   end

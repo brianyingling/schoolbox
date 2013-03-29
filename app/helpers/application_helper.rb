@@ -8,10 +8,10 @@ module ApplicationHelper
           nav += "<li>" + link_to("Add Course", new_course_path, :id=>'add_course_link')
           nav += "<li>" + link_to("View Courses", courses_path, :id=>'view_course_link') + "</li></ul>"
       nav += "<li class='has-dropdown'>"
-        nav += "<a href='#'>Classes</a>"
+        nav += "<a href='#' id='klass_menu_link'>Classes</a>"
           nav += "<ul class='dropdown'>"
           nav += "<li>" + link_to("Add Class", new_klass_path, :id=>'add_klass_link')
-          nav += "<li><a href='#' class=''>View Class</a></li></ul>"
+          nav += "<li>" + link_to("View Classes", klasses_path, :id=>'view_klass_link') + "</li></ul>"
       nav += "<li class='has-dropdown'>"
         nav += "<a href='#'>Posts</a>"
           nav += "<ul class='dropdown'>"
