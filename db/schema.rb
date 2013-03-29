@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130327022637) do
+ActiveRecord::Schema.define(:version => 20130328203919) do
 
   create_table "calendars", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130327022637) do
     t.integer  "post_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "postdate"
   end
 
   create_table "courses", :force => true do |t|
@@ -94,7 +95,7 @@ ActiveRecord::Schema.define(:version => 20130327022637) do
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.string   "prefix"
+    t.string   "appellation"
   end
 
 end

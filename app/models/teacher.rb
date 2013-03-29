@@ -14,7 +14,7 @@
 #
 
 class Teacher < ActiveRecord::Base
-  attr_accessible :username, :email, :prefix, :first_name, :last_name, :password, :password_confirmation
+  attr_accessible :username, :email, :appellation, :first_name, :last_name, :password, :password_confirmation
   has_secure_password
   has_many :posts
   has_many :courses
@@ -23,7 +23,7 @@ class Teacher < ActiveRecord::Base
   validates :email, :uniqueness => true
 
   def name
-    "#{self.prefix} #{self.last_name}"
+    "#{self.appellation} #{self.last_name}"
   end
 
 end

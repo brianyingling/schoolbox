@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: courses
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  teacher_id  :integer
+#  calendar_id :integer
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Course do

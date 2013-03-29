@@ -13,8 +13,13 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
   end
   def edit
+    @course = Course.find(params[:id])
+    render :new
   end
   def update
+    course = Course.find(params[:id])
+    course.update_attributes(params[:course])
+    redirect_to courses_path
   end
   def destroy
     course = Course.find(params[:id])

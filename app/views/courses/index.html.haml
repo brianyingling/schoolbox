@@ -11,13 +11,13 @@
         %td Description
         %td Periods
         %td Actions
-      - @courses.each do |course|
+      - @courses.each_with_index do |course, i|
         %tr
-          %td= link_to course.name, course
+          %td= link_to course.name, course, :id=>"course_link_#{i}"
           %td= link_to("#{course.teacher.first_name + " " + course.teacher.last_name}", course.teacher)
           %td= course.description
           %td= course.klasses.map(&:period).join(', ')
           %td
             = hidden_field_tag :id=>"course_id", :value=>course.id
-            = link_to "Edit", edit_course_path(course.id), :class=>'button radius tiny'
-            = link_to "Delete", course, :method=>'delete', :class=>'button radius tiny alert'
+            = link_to "Edit", edit_course_path(course.id), :class=>'button radius tiny', :id=>"edit_btn_#{i}"
+            = link_to "Delete", course, :method=>'delete', :class=>'button radius tiny alert', :id=>"delete_btn_#{i}"

@@ -21,6 +21,6 @@ FactoryGirl.define do
     last_name               'Yingling'
     password                'byingling'
     password_confirmation   'byingling'
-    # prefix                  'Mr.'
+    appellation             'Mr.'
   end
 end
