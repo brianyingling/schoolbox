@@ -10,7 +10,7 @@ module ApplicationHelper
       nav += "<li class='has-dropdown'>"
         nav += "<a href='#'>Classes</a>"
           nav += "<ul class='dropdown'>"
-          nav += "<li><a href='#' class=''>Add Class</a></li>"
+          nav += "<li>" + link_to("Add Class", new_klass_path, :id=>'add_klass_link')
           nav += "<li><a href='#' class=''>View Class</a></li></ul>"
       nav += "<li class='has-dropdown'>"
         nav += "<a href='#'>Posts</a>"

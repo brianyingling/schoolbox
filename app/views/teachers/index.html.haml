@@ -1,3 +1,21 @@
-
-
-#teacher_page
+.row
+  .large-12.columns
+    %h1 Teachers
+    %table#teachers
+      %thead
+        %tr
+          %th Appellation
+          %th First Name
+          %th Last Name
+          %th Email
+          %th Username
+          %th Courses
+      %tbody
+        - @teachers.each do |teacher|
+          %tr
+            %td= teacher.appellation
+            %td= teacher.first_name
+            %td= teacher.last_name
+            %td= teacher.email
+            %td= teacher.username
+            %td= teacher.courses.map(&:name).join(', ')
