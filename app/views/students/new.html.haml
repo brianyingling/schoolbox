@@ -3,7 +3,7 @@
 .row{:style=>'background: #fff;opacity:0.9;'}
   .large-5.columns
     - if @auth.nil?
-      %h3= New Student Registration
+      %h3 New Student Registration
     - else
       %h3 Edit Account Settings
     = form_for @student do |f|

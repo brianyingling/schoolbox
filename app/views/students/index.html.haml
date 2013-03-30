@@ -1,23 +1,11 @@
-.row
-  .12-large.columns
-    %h1 Students
-.row
-  .12-large.columns
-    %table#students
-      %thead
-        %tr
-          %td Add Student
-          %td First Name
-          %td Last Name
-          %td Email
-          %td Gender
-          %td Username
-      %tbody
-        - @students.each do |student|
-          %tr
-            %td= check_box_tag("")
-            %td= student.first_name
-            %td= student.last_name
-            %td= student.email
-            %td= student.gender
-            %td= student.address
+= form_tag '/enroll' do
+  .row
+    .6-large.columns
+      %h1 Students
+      = select_tag "Courses", options_from_collection_for_select(@auth.klasses.map(&:course), "id", "name")
+      = submit_tag "Enroll", :class=>'button radius tiny'
+    .6-large.columns
+  .row
+    .12-large.columns
+      #student_list
+        = render :partial=>'studentlist'

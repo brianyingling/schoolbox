@@ -7,5 +7,6 @@ FactoryGirl.define do
     password_confirmation   'bob'
     address                 '10 E. 21st St, New York, NY'
     gender                  'male'
+    email                   'bob@gmail.com'
   end
 end

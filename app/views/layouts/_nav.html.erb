@@ -21,7 +21,7 @@
         <% end %>
         <li class="divider"></li>
         <% if @auth.nil? %>
-          <li class='has-dropdown'><a href="">Register</a>
+          <li class='has-dropdown'><a href="#">Register</a>
             <ul class='dropdown'>
               <li><%= link_to "New Teacher", new_teacher_path %>
               <li><%= link_to "New Student", new_student_path %>
@@ -39,7 +39,7 @@
         <li class="divider hide-for-small"></li>
         <li class="has-dropdown">
           <% if @auth.present? %>
-            <%= link_to @auth.email %>
+            <%= link_to @auth.email, "#", :id=>'login_email_btn' %>
           <% end %>
           <ul class="dropdown">
             <% if @auth.present? && @auth.is_a?(Teacher) %>

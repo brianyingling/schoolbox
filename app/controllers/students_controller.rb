@@ -6,8 +6,8 @@ class StudentsController < ApplicationController
     @student = Student.new
   end
   def create
-    student = Student.create(params[:student])
-    redirect_to student
+    Student.create(params[:student])
+    redirect_to root_path
   end
   def show
     @student = Student.find(params[:id])
@@ -17,6 +17,9 @@ class StudentsController < ApplicationController
     render :new
   end
   def update
+    student = Student.find(params[:id])
+    student.update_attributes(params[:student])
+    redirect_to root_path
   end
   def destroy
   end

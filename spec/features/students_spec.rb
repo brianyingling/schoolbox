@@ -8,17 +8,16 @@ describe 'Students' do
   let(:student) {FactoryGirl.create(:student)}
 
   describe 'GET /students/new' do
-    it 'displays the new student form' do
+    it 'displays the new student form', :js=>true do
       visit root_path
       click_link('Register')
       click_link('New Student')
       page.should have_text('New Student Registration')
-      # expect(student).to be_an_instance_of(Student)
     end
   end
 
   describe 'POST students/' do
-    it 'creates a Student record in the db using the New Student Registration form' do
+    it 'creates a Student record in the db using the New Student Registration form', :js=>true do
       visit root_path
       click_link('Register')
       click_link('New Student')
@@ -33,6 +32,16 @@ describe 'Students' do
     end
   end
 
+  describe 'PUT /students/:id/edit' do
+    it 'edits a student\'s account settings', :js=>true do
+      create_student(student)
+      # page.execute_script("$('#login_email_btn').css('display','inline-block')")
+      login(student)
+      find('#login_email_btn').click
+      click_link('Account Settings')
+      page.should have_text('Edit Account Settings')
+    end
+  end
 
 
 end
