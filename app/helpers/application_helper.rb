@@ -37,5 +37,11 @@ module ApplicationHelper
     nav
   end
 
+  def student_settings_nav
+    nav = ''
+    nav += '<li><label>Important Info</label></li>'
+    nav += '<li>' + link_to("Account Settings", edit_student_path(@auth.id), :id=>'account_settings_btn') + "</li>"
+  end
+
 
 end

@@ -42,10 +42,13 @@
             <%= link_to @auth.email %>
           <% end %>
           <ul class="dropdown">
-            <% if @auth.present? %>
+            <% if @auth.present? && @auth.is_a?(Teacher) %>
               <%== teacher_settings_nav %>
+            <% elsif @auth.present? && @auth.is_a?(Student) %>
+              <%== student_settings_nav %>
               <li class="divider"></li>
-
+            <% else %>
+              <li class="divider"></li>
             <% end %>
           </ul>
         </li>

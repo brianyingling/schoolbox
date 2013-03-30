@@ -2,7 +2,10 @@
 %br
 .row{:style=>'background: #fff;opacity:0.9;'}
   .large-5.columns
-    %h3 New Student Registration
+    - if @auth.nil?
+      %h3= New Student Registration
+    - else
+      %h3 Edit Account Settings
     = form_for @student do |f|
       = f.label           :username
       = f.text_field      :username
@@ -18,3 +21,9 @@
       = f.password_field  :password_confirmation
       = f.submit
       = link_to "Cancel", root_path, :class=>'button radius tiny alert'
+  .large-7.columns
+    - if @auth.present? && @auth.is_a?(Student)
+      %h4 My Courses
+      - @auth.klasses.each do |klass|
+        %h6= link_to klass.course.name, klass.course
+        %p=  "Period #{klass.period}"
