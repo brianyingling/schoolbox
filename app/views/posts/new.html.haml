@@ -1,0 +1,6 @@
+.row
+  - if @post.id.nil?
+    %h2 New Post
+  - else
+    %h2 Edit Post
+  = render :partial=>'form'

@@ -5,6 +5,10 @@ class PostsController < ApplicationController
   def new
     @klasses = @auth.courses.map {|course| course.klasses }
     @post = Post.new
+    respond_to do |format|
+      format.html {render :new}
+      format.js
+    end
   end
   def create
     @post = Post.create(params[:post])
@@ -20,11 +24,11 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     post.update_attributes(params[:post])
-    redirect_to post.teacher
+    redirect_to root_path
   end
   def destroy
     post = Post.find(params[:id])
     post.delete
-    redirect_to post.teacher
+    redirect_to posts_path
   end
 end

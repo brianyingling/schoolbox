@@ -17,7 +17,7 @@
         <% if @auth.is_a?(Teacher) %>
           <%== teacher_nav %>
         <% elsif @auth.present? %>
-          <li><%= link_to "My Courses", courses_path %></li>
+          <li><%= link_to "My Classes", klasses_path %></li>
         <% end %>
         <li class="divider"></li>
         <% if @auth.nil? %>
@@ -39,7 +39,7 @@
         <li class="divider hide-for-small"></li>
         <li class="has-dropdown">
           <% if @auth.present? %>
-            <%= link_to @auth.email, "#", :id=>'login_email_btn' %>
+            <%= link_to @auth.email, "#", :id=>'login_email_link' %>
           <% end %>
           <ul class="dropdown">
             <% if @auth.present? && @auth.is_a?(Teacher) %>

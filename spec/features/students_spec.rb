@@ -37,7 +37,7 @@ describe 'Students' do
       create_student(student)
       # page.execute_script("$('#login_email_btn').css('display','inline-block')")
       login(student)
-      find('#login_email_btn').click
+      find('#login_email_link').click
       click_link('Account Settings')
       page.should have_text('Edit Account Settings')
     end

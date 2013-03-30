@@ -34,7 +34,7 @@ describe 'Courses' do
     let(:course) {FactoryGirl.create(:course)}
     it 'displays a specific course', :js=>true do
       login(teacher)
-      create_course(course)
+      create_course(teacher, course)
       visit courses_path
       find('#course_link_0').click
       page.should have_text("Classes Offered")
@@ -47,7 +47,7 @@ describe 'Courses' do
     let(:course) {FactoryGirl.create(:course)}
     it 'edits a particular course', :js=>true do
       login(teacher)
-      create_course(course)
+      create_course(teacher, course)
       visit courses_path
       find('#edit_btn_0').click
       course.name = "Health"
@@ -67,7 +67,7 @@ describe 'Courses' do
     let(:course) {FactoryGirl.create(:course)}
     it 'deletes a course', :js=>true do
       login(teacher)
-      create_course(course)
+      create_course(teacher, course)
       visit courses_path
       find("#delete_btn_0").click
       page.should_not have_button('Create Course')
@@ -78,11 +78,11 @@ describe 'Courses' do
 
 end
 
-def create_course(course)
-  find('#course_menu_link').click
-  find('#add_course_link').click
-  fill_in('Name',:with=>course.name)
-  fill_in('Description',:with=>course.description)
-  choose("course[teacher_id]")
-  click_button('Create Course')
-end
+# def create_course(course)
+#   find('#course_menu_link').click
+#   find('#add_course_link').click
+#   fill_in('Name',:with=>course.name)
+#   fill_in('Description',:with=>course.description)
+#   choose("course[teacher_id]")
+#   click_button('Create Course')
+# end

@@ -22,5 +22,8 @@ class StudentsController < ApplicationController
     redirect_to root_path
   end
   def destroy
+    student = Student.find(params[:id])
+    student.delete
+    redirect_to root_path
   end
 end

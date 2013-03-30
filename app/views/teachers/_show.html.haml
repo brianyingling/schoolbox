@@ -28,7 +28,8 @@
           %h5= post.title
           .post_meta= post.created_at.to_datetime.strftime('%A, %B %d %Y')
           .edit_area= post.message
-          %div= post.course
+          - if post.klasses.present?
+            %div= "Posted in #{post.klasses.map(&:course).map(&:name).join(', ')}"
           = hidden_field_tag @auth.id
           = link_to "Edit", nil, :class=>'button radius tiny'
           = link_to "Delete", post, :method=>'delete', :class=>'button radius tiny alert'

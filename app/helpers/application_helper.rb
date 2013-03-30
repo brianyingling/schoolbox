@@ -15,8 +15,8 @@ module ApplicationHelper
       nav += "<li class='has-dropdown'>"
         nav += "<a href='#'>Posts</a>"
           nav += "<ul class='dropdown'>"
-          nav += "<li><a href='#' class=''>Add Post</a></li>"
-          nav += "<li><a href='#' class=''>View Post</a></li></ul>"
+          nav += "<li>" + link_to('Add Post', new_post_path, :id=>'new_post_link') + "</li>"
+          nav += "<li>" + link_to('View Post', posts_path, :id=>'view_post_link') + "</li></ul>"
       nav += "<li class='has-dropdown'>"
         nav += "<a href='#'>Assignments</a>"
           nav += "<ul class='dropdown'>"
@@ -30,7 +30,7 @@ module ApplicationHelper
     nav = ''
     if @auth.is_a?(Teacher)
       nav += "<li><label>Important Info</label></li>"
-      nav += "<li>"+ link_to("Account Settings", '#', :id=>'account_settings_btn') + "</li>"
+      nav += "<li>"+ link_to("Account Settings", '#', :id=>'account_settings_link') + "</li>"
       nav += "<li>"+ link_to("View All Teachers", teachers_path) + "</li>"
       nav += "<li>"+ link_to("View All Students", students_path) + "</li>"
     end

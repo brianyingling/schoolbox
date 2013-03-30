@@ -29,5 +29,15 @@ module CreateHelper
     click_button('Create Student')
   end
 
+  def create_post(post)
+    visit root_path
+    click_link('Posts')
+    find('#new_post_link').click
+    fill_in('Title', :with=>post.title)
+    fill_in('Message',:with=>post.message)
+    check('post[klass_ids][]')
+    click_button('Create Post')
+  end
+
 
 end

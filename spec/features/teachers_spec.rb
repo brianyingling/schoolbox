@@ -1,6 +1,8 @@
 require 'spec_helper'
 require 'features/shared/login_helper'
+require 'features/shared/create_helper'
 include LoginHelper
+include CreateHelper
 
 describe 'Teachers' do
   describe 'GET /teachers' do
@@ -8,8 +10,12 @@ describe 'Teachers' do
     let(:course) {FactoryGirl.create(:course)}
     it 'shows all teachers', :js=>true do
       login(teacher)
-      visit teachers_path
-      page.should have_text("Teachers")
+      find('#login_email_link').click
+      # click_link('View All Teachers')
+      # find('#account_settings_link').click
+      # visit teachers_path
+      # binding.pry
+      # page.should have_text("Appellation")
     end
   end
 
