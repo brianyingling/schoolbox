@@ -5,6 +5,8 @@
       .post
         %h5= post.title
         .edit_area= post.message
+        - if post.klasses.present?
+          %div= "Posted in #{post.klasses.map(&:course).map(&:name).join(', ')} by #{post.teacher.name}"
         %p= post.created_at
         = hidden_field_tag @auth.id
         = link_to "Edit", edit_post_path(post.id), :class=>'button radius tiny'
