@@ -18,10 +18,10 @@ module ApplicationHelper
           nav += "<li>" + link_to('Add Post', new_post_path, :id=>'new_post_link') + "</li>"
           nav += "<li>" + link_to('View Post', posts_path, :id=>'view_post_link') + "</li></ul>"
       nav += "<li class='has-dropdown'>"
-        nav += "<a href='#'>Assignments</a>"
+        nav += "<a href='#', id='assignments_menu_link'>Assignments</a>"
           nav += "<ul class='dropdown'>"
           nav += "<li><a href='#' class=''>Add Assignment</a></li>"
-          nav += "<li><a href='#' class=''>View Assignment</a></li></ul>"
+          nav += "<li>" + link_to("View Assignments", assignments_path, :id=>'view_assigments_link') + "</li></ul>"
     end
     nav
   end

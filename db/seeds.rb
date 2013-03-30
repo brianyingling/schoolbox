@@ -12,6 +12,7 @@ Klass.delete_all
 Post.delete_all
 Comment.delete_all
 Calendar.delete_all
+Assignment.delete_all
 
 c1 = Course.create(:name=>'US History I', :description=>'This is US History I. This course covers from the early Colonial America period to the end of World War I. It reviews concepts that coorespond to the foundation of the Republic, the impact of slavery leading up to the Civil War and industrialization in the late 1800s-early 1900s. This course is geared towards sophomores.')
 c2 = Course.create(:name=>'World History', :description=>'This is world history. This course takes a thematic approach to studying the world. The first quarter discusses revolutionary ideas that occurred during the Reformation and the French Revolution, Middle Eastern themes, topics in East Asia, and lastly totalitarianism and World Wars I and II.')
@@ -19,13 +20,10 @@ c3 = Course.create(:name=>'GA Web Development Immersive', :description=>'This is
 
 t1 = Teacher.create(:username=>'myingling',:email=>'m_rogers3@hotmail.com',:first_name=>"Melissa",:last_name=>'Yingling',:password=>'myingling',:password_confirmation=>'myingling')
 t2 = Teacher.create(:username=>'byingling',:email=>'byingling@gmail.com',:first_name=>"Brian",:last_name=>'Yingling',:password=>'byingling',:password_confirmation=>'byingling')
-
 t3 = Teacher.create(:username=>'chyld',:email=>'chyld@chyld.com',:first_name=>"Chyld",:last_name=>'Medford',:password=>'chyld',:password_confirmation=>'chyld')
 
 s1 = Student.create(:username=>'bob',:email=>'bob@gmail.com',:password=>'bob',:password_confirmation=>'bob', :first_name=>'Bob',:last_name=>'Smith',:address=>'10 E 21st St, NY, NY')
-
 s2 = Student.create(:username=>'jane', :password=>'jane',:password_confirmation=>'jane', :first_name=>'Jane', :last_name=>'Smith',:address=>'10 E 21st St, NY, NY',:email=>'jane@gmail.com')
-
 s3 = Student.create(:username=>'george',:first_name=>'George',:last_name=>'Jones',:password=>'george',:password_confirmation=>'george',:address=>'10 E 21st St, NY, NY',:email=>'george@gmail.com')
 
 k1 = Klass.create(:schoolyear=>'2011-2012',:period=>1)
@@ -33,16 +31,16 @@ k2 = Klass.create(:schoolyear=>'2012-2013',:period=>3)
 k3 = Klass.create(:schoolyear=>'2013',:period=>1)
 
 p1 = Post.create(:title=>'Discussion Question: Is free speech unlimited according to the 1st Amendment?', :message=>'Do you believe that people can say whatever they want? Should speech be curbed in some ways, and why?',:postdate=>Time.now)
-
 p2 = Post.create(:title=>'Discussion Question: Should the US have dropped the atomic bomb on Japan to end WWII?', :message=>'Some people believe that the US could have avoided using the bomb by either invading Japan or demonstrating the bomb\'s power on a faraway island. Do you agree or disagree?')
-
 p3 = Post.create(:title=>'Discussion Question: Which do you like better, Ruby or JavaScript? Why?', :message=>'We all know JavaScript sucks, but it does have its advantages. Do those advantages measure up to Ruby\'s syntax and elegance? Discuss.')
 
 cmt1 = Comment.create(:text=>'I think speech should be limited because stupid people shouldn\'t be allowed to speak.')
-
 cmt2 = Comment.create(:text=>'It just sounds painful.')
-
 cmt3 = Comment.create(:text=>'Everybody knows JavaScript sucks and Ruby is the bomb. Go Rails!')
+
+a1 = Assignment.create(:name=>'Renaissance Report',:description=>'This report should compare High Renaissance artists with Northern Renaissance artists.',:duedate=>'2013-04-30',:value=>100)
+a2 = Assignment.create(:name=>'World War II Essay',:description=>'This is an essay on World War II.',:duedate=>'2013-04-30',:value=>100)
+a3 = Assignment.create(:name=>'21st Century China Report',:description=>'This is an essay on 21st century China.',:duedate=>'2013-04-30',:value=>100)
 
 t1.courses << c2
 t2.courses << c1
@@ -81,6 +79,10 @@ k2.posts << p1
 k2.posts << p2
 k3.posts << p1
 k3.posts << p2
+
+k1.assignments << a1
+k2.assignments << a2
+k3.assignments << a3
 
 
 ##### Seeding GA Immersive Class

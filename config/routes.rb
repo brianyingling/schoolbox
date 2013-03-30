@@ -1,6 +1,7 @@
 Schoolbox::Application.routes.draw do
   root :to=>'home#index'
-  resources :teachers, :students, :courses, :klasses, :posts, :comments
+  resources :teachers, :students, :courses, :klasses, :posts, :comments, :assignments
+  # resources :assigments, :only => [:index]
 
 
   get '/dashboard'=>'home#dashboard'

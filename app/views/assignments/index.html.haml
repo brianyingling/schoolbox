@@ -1,0 +1,18 @@
+.row
+  .12-large.columns
+    %h3 Assignments
+    - @klasses.each do |klass|
+      %h4= klass.course.name
+      %h5= "Period #{klass.period}"
+      %table
+        %tr
+          %td Name
+          %td Description
+          %td Due Date
+          %td Point Value
+        - klass.assignments.each do |assignment|
+          %tr
+            %td= assignment.name
+            %td= assignment.description
+            %td= assignment.duedate
+            %td= assignment.value

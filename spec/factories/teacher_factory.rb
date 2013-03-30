@@ -15,12 +15,12 @@
 
 FactoryGirl.define do
   factory :teacher, class: Teacher do
-    username                'byingling'
-    email                   'byingling@gmail.com'
-    first_name              'Brian'
-    last_name               'Yingling'
-    password                'byingling'
-    password_confirmation   'byingling'
+    username                'mjones'
+    email                   'mjones@gmail.com'
+    first_name              'Michael'
+    last_name               'Jones'
+    password                'mjones'
+    password_confirmation   'mjones'
     appellation             'Mr.'
   end
 end
