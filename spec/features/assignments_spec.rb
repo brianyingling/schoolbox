@@ -8,6 +8,7 @@ describe 'Assignments' do
   let(:teacher) {FactoryGirl.create(:teacher)}
   let(:klass1) {FactoryGirl.create(:klass_period1)}
   let(:klass2) {FactoryGirl.create(:klass_period2)}
+
   describe 'GET /assignments' do
     it 'lists all of the assignments for each class', :js=>true do
       teacher.courses << course
@@ -18,6 +19,24 @@ describe 'Assignments' do
       find('#assignments_menu_link').click
       click_link('View Assignments')
       page.should have_text('Assignments')
+    end
+  end
+
+  describe 'GET /assignments/new' do
+    it 'displays the new assignment form', :js=>true do
+      login(teacher)
+      find('#assignments_menu_link').click
+      click_link('Add Assignment')
+      page.should have_text('New Assignment')
+    end
+  end
+
+  describe 'POST /assignments' do
+    it 'creates a new Assignment in the db', :js=>true do
+      login(teacher)
+      create_assignment(assignment, teacher)
+      # NEED TO CREATE CHECKBOXES TO SHOW WHAT KLASSES HAVE
+      # THIS ASSIGNMENT
     end
   end
 

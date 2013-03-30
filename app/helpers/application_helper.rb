@@ -20,7 +20,7 @@ module ApplicationHelper
       nav += "<li class='has-dropdown'>"
         nav += "<a href='#', id='assignments_menu_link'>Assignments</a>"
           nav += "<ul class='dropdown'>"
-          nav += "<li><a href='#' class=''>Add Assignment</a></li>"
+          nav += "<li>" + link_to('Add Assignment', new_assignment_path, :id=>'add_assignment_link') + "</li>"
           nav += "<li>" + link_to("View Assignments", assignments_path, :id=>'view_assigments_link') + "</li></ul>"
     end
     nav
