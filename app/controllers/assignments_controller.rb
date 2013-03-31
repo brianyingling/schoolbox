@@ -10,7 +10,7 @@ class AssignmentsController < ApplicationController
     redirect_to assignments_path
   end
   def show
-    binding.pry
+    @assignment = Assignment.find(params[:id])
   end
 
 end
