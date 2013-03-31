@@ -1,4 +1,17 @@
 = form_for @assignment do |f|
   = f.label         :name
-  = f.text_field    :name
+  = f.text_field    :name, :autofocus=>true
+  = f.label         :description
+  = f.text_area     :description
+
+  = f.label         :due_date
+  = f.text_field    :duedate, :dateformat=>'YYYY-MM-DD'
+
+  = f.label         :value
+  = f.text_field    :value
+
+  - @auth.klasses.each do |klass|
+    %div
+      = check_box_tag 'assignment[klass_ids][]', klass.id
+      = "#{klass.course.name}, Period #{klass.period}"
   = f.submit

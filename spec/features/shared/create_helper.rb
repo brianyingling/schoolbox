@@ -43,11 +43,12 @@ module CreateHelper
     visit root_path
     find('#assignments_menu_link').click
     click_link('Add Assignment')
-    fill_in(:name, :with=>assignment.name)
-    fill_in(:description, :with=>assignment.description)
-    fill_in(:duedate, :with=>assignment.duedate)
-    fill_in(:value,:with=>assignment.value)
-
+    fill_in('assignment_name', :with=>assignment.name)
+    fill_in('assignment_description', :with=>assignment.description)
+    fill_in('assignment_duedate', :with=>assignment.duedate)
+    fill_in('assignment_value',:with=>assignment.value)
+    first("input[type='checkbox']").click
+    click_button('Create Assignment')
     # NEED TO FILL IN KLASSES -- CHECK WHICH KLASSES ARE FOR THIS
     # ASSIGNMENT
 

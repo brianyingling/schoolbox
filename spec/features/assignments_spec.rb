@@ -1,6 +1,8 @@
 require 'spec_helper'
 require 'features/shared/login_helper'
+require 'features/shared/create_helper'
 include LoginHelper
+include CreateHelper
 
 describe 'Assignments' do
   let(:assignment) {FactoryGirl.create(:assignment)}
@@ -34,10 +36,25 @@ describe 'Assignments' do
   describe 'POST /assignments' do
     it 'creates a new Assignment in the db', :js=>true do
       login(teacher)
+      teacher.courses << course
+      course.klasses << klass1
+      course.klasses << klass2
       create_assignment(assignment, teacher)
-      # NEED TO CREATE CHECKBOXES TO SHOW WHAT KLASSES HAVE
-      # THIS ASSIGNMENT
     end
   end
+
+  describe 'GET /assignments/:id' do
+    it 'shows the characteristics of a particular assignment and the grades given for each student', :js=>true do
+      teacher.courses << course
+      course.klasses << klass1
+      course.klasses << klass2
+      klass1.assignments << assignment
+      login(teacher)
+      binding.pry
+      visit assignment_path(assignment.id)
+    end
+  end
+
+
 
 end

@@ -21,4 +21,5 @@
 //= require 'schoolbox.js'
 //= require 'teacher.js'
 //= require 'student.js'
+//= require 'assignment.js'
 
