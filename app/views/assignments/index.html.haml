@@ -19,4 +19,4 @@
             %td= assignment.value
             %td
               = link_to "Edit", edit_assignment_path(assignment.id), :class=>'button radius tiny success'
-              = link_to "Delete", assignment, :method=>'delete', :confirm=>'Are you sure?', :class=>'button radius tiny alert'
+              = link_to "Delete", assignment, :method=>'delete', :confirm=>'Are you sure?', :class=>'button radius tiny alert', :id=>"delete_assignment_link_#{assignment.id}"

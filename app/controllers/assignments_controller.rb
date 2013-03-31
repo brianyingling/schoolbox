@@ -19,4 +19,9 @@ class AssignmentsController < ApplicationController
     redirect_to assignments_path
   end
 
+  def edit
+    @assignment = Assignment.find(params[:id])
+    render :new
+  end
+
 end

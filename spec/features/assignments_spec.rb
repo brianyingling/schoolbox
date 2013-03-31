@@ -55,13 +55,27 @@ describe 'Assignments' do
   end
 
   describe 'PUT /assignments/:id' do
-    it 'edits an already existing assignment' do
+    it 'edits an already existing assignment', :js=>true do
       teacher.courses << course
       course.klasses << klass1
       course.klasses << klass2
       klass1.assignments << assignment
       login(teacher)
       visit assignments_path
+    end
+  end
+
+  describe 'DELETE /assignments' do
+    it 'deletes an assignment', :js=>true do
+      teacher.courses << course
+      course.klasses << klass1
+      course.klasses << klass2
+      klass1.assignments << assignment
+      login(teacher)
+      visit assignments_path
+      find("#delete_assignment_link_#{assignment.id}").click
+      page.driver.browser.switch_to.alert.accept
+
     end
   end
 
