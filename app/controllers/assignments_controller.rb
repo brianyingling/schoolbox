@@ -13,4 +13,10 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.find(params[:id])
   end
 
+  def destroy
+    assignment = Assignment.find(params[:id])
+    assignment.delete
+    redirect_to assignments_path
+  end
+
 end
