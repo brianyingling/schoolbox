@@ -13,6 +13,10 @@ class AssignmentsController < ApplicationController
   def show
     @assignment = Assignment.find(params[:id])
     @grade = Grade.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def destroy

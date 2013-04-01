@@ -3,7 +3,7 @@
 - @assignment.klasses.each do |klass|
   - students = ''
   - grades = ''
-  .large-6.columns
+  .large-4.columns
     %table#students
       %tr
         %td First Name
@@ -12,7 +12,7 @@
         %td Edit Grade
         %td Options
       - klass.students.each do |student|
-        = form_for @grade do |f|
+        = form_for @grade, :remote=>true do |f|
           - grade = student.grades.where(:assignment_id=>@assignment.id).first || ''
           %tr{:id=>"tr_id_#{student.id}", :class=>'tablerow'}
             %td= student.first_name
@@ -23,8 +23,11 @@
                 = hidden_field_tag :current_grade_id, grade.id
               - else
                 - grade = Grade.new
+                - grade.value ||= 0.0
+                - grade.save
             %script
-              = "var result = {student:'#{student.first_name}',grade:#{grade.value}}"
+              = "var percentage = #{(grade.value / @assignment.value.to_f) * 100}"
+              = "var result = {student:'#{student.first_name} #{student.last_name}',grade:percentage}"
               = "grades.push(result);"
             %td
               = f.text_field :value, :placeholder=>'Value'
@@ -32,7 +35,7 @@
               = hidden_field_tag "student_id", student.id
               = hidden_field_tag "assignment_id", @assignment.id
               = f.submit "Save", :class=>'button radius tiny success'
-  .large-6.columns
+  .large-8.columns
     #data
 
 
@@ -52,5 +55,6 @@
   ykeys: ['grade'],
   // Labels for the ykeys -- will be displayed when you hover over the
   // chart.
-  labels: ['grade']
+  labels: ['grade'],
+  hideHover: false
   });
