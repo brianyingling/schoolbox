@@ -18,6 +18,8 @@
 //= require 'jquery-ui-1.10.2/ui/jquery-ui.js'
 //= require 'DataTables-1.9.4/media/js/jquery.dataTables.min.js'
 //= require 'foundation4/js/foundation.min.js'
+//= require 'raphael-min.js'
+//= require 'morris.js'
 //= require 'schoolbox.js'
 //= require 'teacher.js'
 //= require 'student.js'

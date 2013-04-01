@@ -7,18 +7,4 @@
   .large-12.columns
     %h3 Students Assigned to This Assignment:
 .row
-  .large-6.columns
-    - @assignment.klasses.each do |klass|
-      %h4= "#{klass.course.name}, Period #{klass.period}"
-      %table#students
-        %tr
-          %td First Name
-          %td Last Name
-          %td Grade
-        - klass.students.each do |student|
-          %tr
-            %td= student.first_name
-            %td= student.last_name
-            %td Grade placeholder
-  .large-6.columns
-    %p Hello.
+  = render :partial=>'shared/assigngrades.js.haml'

@@ -1,5 +1,5 @@
 class Student
   @document_ready: ->
-    $('#students').dataTable({})
+    # $('#students').dataTable()
 
 $(document).ready(Student.document_ready)

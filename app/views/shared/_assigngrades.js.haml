@@ -1,0 +1,55 @@
+- @assignment.klasses.each do |klass|
+  - student = ''
+  - grades = ''
+  .large-6.columns
+    %table#students
+      %tr
+        %td First Name
+        %td Last Name
+        %td Grade
+        %td Add Grade
+        %td Options
+      - klass.students.each do |student|
+        = form_for @grade do |f|
+          - grade = student.grades.where(:assignment_id=>@assignment.id).first
+          %tr
+            %td= student.first_name
+            %td= student.last_name
+            %td{:class=>"grade_td"}
+              - if grade.present?
+                = grade.value
+                = hidden_field_tag :current_grade_id, grade.id
+            %td
+              = f.text_field :value, :placeholder=>'Value'
+            %td
+              = hidden_field_tag "student_id", student.id
+              = hidden_field_tag "assignment_id", @assignment.id
+              = f.submit "Save", :class=>'button radius tiny success'
+  .large-6.columns
+    #data
+
+
+
+
+
+%script
+  new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'data',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: [
+  { year: '2008', value: 20 },
+  { year: '2009', value: 10 },
+  { year: '2010', value: 5 },
+  { year: '2011', value: 5 },
+  { year: '2012', value: 20 }
+  ],
+  // The name of the data record attribute that contains x-values.
+  xkey: 'year',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Value']
+  });

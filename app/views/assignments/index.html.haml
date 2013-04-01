@@ -14,7 +14,7 @@
             %td Options
           - klass.assignments.each do |assignment|
             %tr
-              %td= assignment.name
+              %td= link_to assignment.name, assignment_path(assignment.id)
               %td= assignment.description
               %td= assignment.duedate
               %td= assignment.value
