@@ -22,4 +22,5 @@
 //= require 'teacher.js'
 //= require 'student.js'
 //= require 'assignment.js'
+//= require 'dashboard.js'
 
