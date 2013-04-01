@@ -2,26 +2,7 @@
   .row
     .large-3.columns
       %div{:style=>'border:1px solid black;'}
-        .calendar
-          %h6#month
-            = link_to "<", date: @date.prev_month
-            %span.month= @date.strftime('%B %Y')
-            = link_to ">", date: @date.next_month
-          = calendar @date do |date|
-            / = date.day
-            - assignments = []
-            - if @assignments_by_date[date]
-              = link_to(date.day, "#", :title=>assignments.map(&:name).join(', '), :id=>"#{date}", :class=>'has_assignments date')
-              .assignments
-                - @assignments_by_date[date].each_with_index do |assignment, i|
-                  %div{:id=>"assignment_#{i}", :class=>'assignment', :title=>"Due on #{assignment.duedate}"}
-                    .name= assignment.name
-                    .description= assignment.description
-                    .duedate= "Due #{assignment.duedate}"
-                    .value= "Worth #{assignment.value}"
-                  - assignments << assignment
-            - else
-              = date.day
+        = render :partial=>'calendar'
       %div{:style=>'border:1px solid black;'}
         %h4 My Schedule
         %ul
