@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: assignments
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  description :text
+#  duedate     :date
+#  value       :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  grade_id    :integer
+#
+
 FactoryGirl.define do
   factory :assignment, class: Assignment do
     name            "Renaissance Art Essay"

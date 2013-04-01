@@ -8,6 +8,7 @@
 #  post_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  postdate   :string(255)
 #
 
 class Comment < ActiveRecord::Base

@@ -1,11 +1,15 @@
 class Dashboard
   @document_ready: ->
-    $('.date').click ->
-      $(this).next().fadeIn(250)
-      $(this).next().draggable()
-    $('.date').dblclick ->
-      $(this).next().fadeOut(250)
-    $('.assignments .cancel_link').click ->
-      $(this).parent().fadeOut(100)
+    $('body').on('click', '.date', Dashboard.visible)
+    $('body').on('dblclick', '.date', Dashboard.invisible)
+    $('body').on('click', '.assignments .cancel_link', Dashboard.invisible)
+
+  @visible: ->
+    $(this).next().fadeIn(250)
+    $(this).next().draggable()
+
+
+  @invisible: ->
+    $(this).parent().fadeOut(100)
 
 $(document).ready(Dashboard.document_ready)
