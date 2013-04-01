@@ -1,8 +1,9 @@
 class Dashboard
   @document_ready: ->
-    $('.date').mouseover ->
-      $(this).next().show()
-    $('.date').mouseleave ->
-      $(this).next().hide()
+    $('.date').click ->
+      $(this).next().fadeIn(250)
+      $(this).next().draggable()
+    $('.date').dblclick ->
+      $(this).next().fadeOut(250)
 
 $(document).ready(Dashboard.document_ready)
