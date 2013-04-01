@@ -11,8 +11,9 @@ Course.delete_all
 Klass.delete_all
 Post.delete_all
 Comment.delete_all
-Calendar.delete_all
 Assignment.delete_all
+Grade.delete_all
+
 
 c1 = Course.create(:name=>'US History I', :description=>'This is US History I. This course covers from the early Colonial America period to the end of World War I. It reviews concepts that coorespond to the foundation of the Republic, the impact of slavery leading up to the Civil War and industrialization in the late 1800s-early 1900s. This course is geared towards sophomores.')
 c2 = Course.create(:name=>'World History', :description=>'This is world history. This course takes a thematic approach to studying the world. The first quarter discusses revolutionary ideas that occurred during the Reformation and the French Revolution, Middle Eastern themes, topics in East Asia, and lastly totalitarianism and World Wars I and II.')
@@ -41,6 +42,18 @@ cmt3 = Comment.create(:text=>'Everybody knows JavaScript sucks and Ruby is the b
 a1 = Assignment.create(:name=>'Renaissance Report',:description=>'This report should compare High Renaissance artists with Northern Renaissance artists.',:duedate=>'2013-04-30',:value=>100)
 a2 = Assignment.create(:name=>'World War II Essay',:description=>'This is an essay on World War II.',:duedate=>'2013-04-30',:value=>100)
 a3 = Assignment.create(:name=>'21st Century China Report',:description=>'This is an essay on 21st century China.',:duedate=>'2013-04-30',:value=>100)
+
+g1 = Grade.create(:value=>100)
+g2 = Grade.create(:value=>60)
+g3 = Grade.create(:value=>90)
+
+s1.grades << g1
+s2.grades << g2
+s3.grades << g3
+
+a1.grades << g1
+a2.grades << g2
+a3.grades << g3
 
 t1.courses << c2
 t2.courses << c1

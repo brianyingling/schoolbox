@@ -12,4 +12,6 @@
 
 class Grade < ActiveRecord::Base
   attr_accessible :value
+  belongs_to :assignment
+  belongs_to :student
 end

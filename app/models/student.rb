@@ -20,6 +20,7 @@ class Student < ActiveRecord::Base
   attr_accessible :username, :first_name, :last_name, :password, :password_confirmation, :address, :email, :gender
   has_and_belongs_to_many :klasses
   has_many :comments
+  has_many :grades
   validates :username, :uniqueness => true
   validates :email, :uniqueness => true
 

@@ -24,5 +24,11 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.find(params[:id])
     render :new
   end
+  def update
+    assignment = Assignment.find(params[:id])
+    assignment.update_attributes(params[:assignment])
+    assignment.save
+    redirect_to assignments_path
+  end
 
 end
