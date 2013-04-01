@@ -2,21 +2,22 @@
   .12-large.columns
     %h3 Assignments
     - @klasses.each do |klass|
-      %h4= klass.course.name
-      %h5= "Period #{klass.period}"
-      %table
-        %tr
-          %td Name
-          %td Description
-          %td Due Date
-          %td Point Value
-          %td Options
-        - klass.assignments.each do |assignment|
+      - if klass.assignments.present?
+        %h4= klass.course.name
+        %h5= "Period #{klass.period}"
+        %table
           %tr
-            %td= assignment.name
-            %td= assignment.description
-            %td= assignment.duedate
-            %td= assignment.value
-            %td
-              = link_to "Edit", edit_assignment_path(assignment.id), :class=>'button radius tiny success'
-              = link_to "Delete", assignment, :method=>'delete', :confirm=>'Are you sure?', :class=>'button radius tiny alert', :id=>"delete_assignment_link_#{assignment.id}"
+            %td Name
+            %td Description
+            %td Due Date
+            %td Point Value
+            %td Options
+          - klass.assignments.each do |assignment|
+            %tr
+              %td= assignment.name
+              %td= assignment.description
+              %td= assignment.duedate
+              %td= assignment.value
+              %td
+                = link_to "Edit", edit_assignment_path(assignment.id), :class=>'button radius tiny success'
+                = link_to "Delete", assignment, :method=>'delete', :confirm=>'Are you sure?', :class=>'button radius tiny alert', :id=>"delete_assignment_link_#{assignment.id}"

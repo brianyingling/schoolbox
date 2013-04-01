@@ -12,4 +12,5 @@
  *= require 'foundation4/css/foundation.min.css'
  *= require 'DataTables-1.9.4/media/css/jquery.dataTables.css'
  *= require 'schoolbox'
+ *= require 'calendar'
  */
