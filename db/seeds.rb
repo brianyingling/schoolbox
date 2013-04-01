@@ -19,9 +19,9 @@ c1 = Course.create(:name=>'US History I', :description=>'This is US History I. T
 c2 = Course.create(:name=>'World History', :description=>'This is world history. This course takes a thematic approach to studying the world. The first quarter discusses revolutionary ideas that occurred during the Reformation and the French Revolution, Middle Eastern themes, topics in East Asia, and lastly totalitarianism and World Wars I and II.')
 c3 = Course.create(:name=>'GA Web Development Immersive', :description=>'This is WDI. It is immersive. We learn everything from the basics of programming using Ruby, the inner workings of a small web framework called Sinatra, and later students move towards Ruby on Rails. Topics also include computer science theory, test driven development, and the latest front-end development techniques using JavaScript.')
 
-t1 = Teacher.create(:username=>'myingling',:email=>'m_rogers3@hotmail.com',:first_name=>"Melissa",:last_name=>'Yingling',:password=>'myingling',:password_confirmation=>'myingling')
-t2 = Teacher.create(:username=>'byingling',:email=>'byingling@gmail.com',:first_name=>"Brian",:last_name=>'Yingling',:password=>'byingling',:password_confirmation=>'byingling')
-t3 = Teacher.create(:username=>'chyld',:email=>'chyld@chyld.com',:first_name=>"Chyld",:last_name=>'Medford',:password=>'chyld',:password_confirmation=>'chyld')
+t1 = Teacher.create(:username=>'myingling',:email=>'m_rogers3@hotmail.com',:first_name=>"Melissa",:last_name=>'Yingling',:password=>'myingling',:password_confirmation=>'myingling', :appellation=>'Mrs.')
+t2 = Teacher.create(:username=>'byingling',:email=>'byingling@gmail.com',:first_name=>"Brian",:last_name=>'Yingling',:password=>'byingling',:password_confirmation=>'byingling', :appellation=>'Mr.')
+t3 = Teacher.create(:username=>'chyld',:email=>'chyld@chyld.com',:first_name=>"Chyld",:last_name=>'Medford',:password=>'chyld',:password_confirmation=>'chyld', :appellation=>'Mr.')
 
 s1 = Student.create(:username=>'bob',:email=>'bob@gmail.com',:password=>'bob',:password_confirmation=>'bob', :first_name=>'Bob',:last_name=>'Smith',:address=>'10 E 21st St, NY, NY')
 s2 = Student.create(:username=>'jane', :password=>'jane',:password_confirmation=>'jane', :first_name=>'Jane', :last_name=>'Smith',:address=>'10 E 21st St, NY, NY',:email=>'jane@gmail.com')

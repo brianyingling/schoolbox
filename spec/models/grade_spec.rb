@@ -25,10 +25,30 @@ describe Grade do
   describe '.create' do
     it 'creates a Grade record in the db' do
       assignment.grades << grade
-      student.assignments << assignment
+      student.grades << grade
       expect(grade.id).to_not be nil
     end
   end
 
+  describe '#value' do
+    it 'has a value that\'s an integer' do
+      grade.value = 90
+      grade.save
+      expect(grade.value).to eq 90
+    end
+  end
 
+  describe '#student' do
+    it 'belongs to a Student object' do
+      student.grades << grade
+      expect(grade.student).to eq student
+    end
+  end
+
+  describe '#assignment' do
+    it 'belongs to an Assignment object' do
+      assignment.grades << grade
+      expect(grade.assignment).to eq assignment
+    end
+  end
 end
