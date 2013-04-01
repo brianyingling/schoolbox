@@ -1,8 +1,8 @@
 - @auth.klasses.each do |klass|
   - klass.posts.each do |post|
-    %div= post.title
-    %div= "Posted for #{klass.course.name} on #{post.postdate}"
-    %h4 Got here
-    %div= post.message
-    %div= "#{post.comments.count} comments"
-    %br
+    .post
+      .title= post.title
+      .tagline= "Posted for #{klass.course.name} on #{post.postdate}"
+      .mesasge= post.message
+      .comments_count= "#{post.comments.count} comments"
+      %br
