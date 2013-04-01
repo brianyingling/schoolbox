@@ -170,15 +170,26 @@ table.calendar {
 
 .assignments {
   display: none;
+  position: relative;
   float: left;
   position: absolute;
   min-width: 300px;
-  background-color: yellow;
-  border: 2px solid gray;
+  background-color: rgb(234,230,160);
+  border: 2px dotted gray;
   padding: 10px;
   z-index: 9999;
-  border-radius: 5px;
+  border-radius: 15px;
   /*box-shadow: 3px 3px 15px #fff;*/
+  .cancel_link {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    border-radius: 100%;
+    background-color: green;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 18px;
+  }
 }
 
 .assignment {

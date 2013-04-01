@@ -9,6 +9,7 @@
     - if @assignments_by_date[date]
       = link_to(date.day, "#", :title=>assignments.map(&:name).join(', '), :id=>"#{date}", :class=>'has_assignments date')
       .assignments
+        = link_to('X', '#', :class=>'cancel_link')
         - @assignments_by_date[date].each_with_index do |assignment, i|
           %div{:id=>"assignment_#{i}", :class=>'assignment', :title=>"Due on #{assignment.duedate}"}
             .name= assignment.name
