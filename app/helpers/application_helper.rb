@@ -3,25 +3,25 @@ module ApplicationHelper
     nav = ""
     if @auth.is_a?(Teacher)
       nav += "<li class='has-dropdown'>"
-        nav += "<a href='#' id='course_menu_link'>Courses</a>"
+        nav += "<a href='#' id='course_menu_link' class='navlinks'>Courses</a>"
           nav += "<ul class='dropdown'>"
-          nav += "<li>" + link_to("Add Course", new_course_path, :id=>'add_course_link')
-          nav += "<li>" + link_to("View Courses", courses_path, :id=>'view_course_link') + "</li></ul>"
+          nav += "<li>" + link_to("Add Course", new_course_path, :id=>'add_course_link', :class=>'navlinks')
+          nav += "<li>" + link_to("View Courses", courses_path, :id=>'view_course_link', :class=>'navlinks') + "</li></ul>"
       nav += "<li class='has-dropdown'>"
-        nav += "<a href='#' id='klass_menu_link'>Classes</a>"
+        nav += "<a href='#' id='klass_menu_link' class='navlinks'>Classes</a>"
           nav += "<ul class='dropdown'>"
-          nav += "<li>" + link_to("Add Class", new_klass_path, :id=>'add_klass_link')
-          nav += "<li>" + link_to("View Classes", klasses_path, :id=>'view_klass_link') + "</li></ul>"
+          nav += "<li>" + link_to("Add Class", new_klass_path, :id=>'add_klass_link', :class=>'navlinks')
+          nav += "<li>" + link_to("View Classes", klasses_path, :id=>'view_klass_link', :class=>'navlinks') + "</li></ul>"
       nav += "<li class='has-dropdown'>"
-        nav += "<a href='#'>Posts</a>"
+        nav += "<a href='#' class='navlinks'>Posts</a>"
           nav += "<ul class='dropdown'>"
-          nav += "<li>" + link_to('Add Post', new_post_path, :id=>'new_post_link') + "</li>"
-          nav += "<li>" + link_to('View Post', posts_path, :id=>'view_post_link') + "</li></ul>"
+          nav += "<li>" + link_to('Add Post', new_post_path, :id=>'new_post_link', :class=>'navlinks') + "</li>"
+          nav += "<li>" + link_to('View Post', posts_path, :id=>'view_post_link', :class=>'navlinks') + "</li></ul>"
       nav += "<li class='has-dropdown'>"
-        nav += "<a href='#', id='assignments_menu_link'>Assignments</a>"
+        nav += "<a href='#', id='assignments_menu_link' class='navlinks'>Assignments</a>"
           nav += "<ul class='dropdown'>"
-          nav += "<li>" + link_to('Add Assignment', new_assignment_path, :id=>'add_assignment_link') + "</li>"
-          nav += "<li>" + link_to("View Assignments", assignments_path, :id=>'view_assigments_link') + "</li></ul>"
+          nav += "<li>" + link_to('Add Assignment', new_assignment_path, :id=>'add_assignment_link', :class=>'navlinks') + "</li>"
+          nav += "<li>" + link_to("View Assignments", assignments_path, :id=>'view_assigments_link', :class=>'navlinks') + "</li></ul>"
     end
     nav
   end

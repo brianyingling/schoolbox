@@ -3,6 +3,11 @@
   opacity: 0.9;
 }
 
+.navlinks {
+  font-family: 'Futura';
+}
+
+
 
 .full {
   width: 100%;
@@ -63,14 +68,14 @@ body {
   min-height: 500px;
 }
 
-.post {
+/*.post {
   margin: 20px 0;
   background-color: #eee;
   border-radius: 5px;
   padding: 5px;
   box-shadow: 5px 5px 25px gray;
 }
-
+*/
 .post-title {
   font-weight: bold;
 }
@@ -207,8 +212,31 @@ table.calendar {
 
 }
 
-.posts {
+.post {
+  margin: 10px;
+  .title {
+    font-family: 'Futura';
+    font-weight: 300;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+  }
+  .message {
+    margin: 15px 0;
+    line-height: 1.3em;
+  }
+}
 
+.comments {
+  display: none;
+}
+
+
+.comment {
+  .tagline {
+    margin-top: 10px;
+    font-weight: italic;
+  }
 }
 
 

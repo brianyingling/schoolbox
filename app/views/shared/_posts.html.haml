@@ -3,6 +3,14 @@
     .post
       .title= post.title
       .tagline= "Posted for #{klass.course.name} on #{post.postdate}"
-      .mesasge= post.message
-      .comments_count= "#{post.comments.count} comments"
+      .message= post.message
+      .comments_count
+        = pluralize(post.comments.count, 'comment')
+        = link_to 'View Comments', '#', :id=>"post_comments_#{post.id}", :class=>'comments_links'
+      .comments{:id=>post.id}
+        - post.comments.each do |comment|
+          .comment
+            = comment.text
+            .tagline= "Posted by #{comment.student.name} on #{comment.created_at}"
+
       %br
