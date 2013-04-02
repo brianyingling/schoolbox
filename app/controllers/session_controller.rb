@@ -15,7 +15,7 @@ class SessionController < ApplicationController
       redirect_to dashboard_path
     else
       flash[:notice] = "Incorrect Login. Please try again"
-      redirect_to login_path
+      render 'home/index'
     end
   end
   def destroy

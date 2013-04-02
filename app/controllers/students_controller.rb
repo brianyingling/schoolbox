@@ -11,7 +11,6 @@ class StudentsController < ApplicationController
     redirect_to root_path
   end
   def show
-    binding.pry
     @student = Student.find(params[:id])
   end
   def edit

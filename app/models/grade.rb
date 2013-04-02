@@ -11,7 +11,7 @@
 #
 
 class Grade < ActiveRecord::Base
-  attr_accessible :value
+  attr_accessible :value, :default=>0.0
   belongs_to :assignment
   belongs_to :student
 end

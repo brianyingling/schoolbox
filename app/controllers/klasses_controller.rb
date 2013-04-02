@@ -16,6 +16,9 @@ class KlassesController < ApplicationController
     render :new
   end
   def update
+    klass = Klass.find(params[:id])
+    klass.update_attributes(params[:klass])
+    redirect_to klasses_path
   end
   def destroy
     klass = Klass.find(params[:id])

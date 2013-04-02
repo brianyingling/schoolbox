@@ -1,4 +1,6 @@
 - @auth.klasses.each do |klass|
+  %h6= "#{klass.course.name}, Period #{klass.period}"
+  = link_to "New Post", new_post_path, :class=>'button radius tiny success'
   - klass.posts.each do |post|
     .post
       .title= post.title
@@ -6,7 +8,7 @@
       .message= post.message
       .comments_count
         = pluralize(post.comments.count, 'comment')
-        = link_to 'View Comments', '#', :id=>"post_comments_#{post.id}", :class=>'comments_links'
+        %span.comments_links{:id=>"post_comments_#{post.id}",:style=>"color:blue;cursor:pointer;display:inline-block;"}= "View Comments"
       .comments{:id=>post.id}
         - post.comments.each do |comment|
           .comment
