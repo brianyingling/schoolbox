@@ -67,5 +67,9 @@ describe Klass do
     end
   end
 
+  describe '#total_average' do
+    it 'returns the class average' do
+    end
+  end
 
 end

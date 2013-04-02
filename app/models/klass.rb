@@ -17,6 +17,17 @@ class Klass < ActiveRecord::Base
   has_and_belongs_to_many :students
   has_and_belongs_to_many :assignments
 
+  ## computes the total average for the entire class
+  def total_average
+    if self.assignments.present?
+      total_points = (self.assignments.map(&:value).reduce(:+)) * self.students.count
+      student_points = self.assignments.map(&:grades).flatten.map(&:value).reduce(:+)
+      "#{(student_points / total_points.to_f) * 100.0} %"
+    else
+      "N/A"
+    end
+  end
+
   def name_and_period
     "#{self.course.name} - Period #{self.period}"
   end

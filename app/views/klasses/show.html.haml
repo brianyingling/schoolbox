@@ -4,6 +4,7 @@
     .large-12.columns
       %h4= "Student Roster for #{@klass.course.name}"
       %h5= "Period #{@klass.period}"
+      %h5= "Current Class Average: #{@klass.total_average}"
   .row{:style=>'background:#fff;opacity:0.9;'}
     .large-12.columns
       %table
