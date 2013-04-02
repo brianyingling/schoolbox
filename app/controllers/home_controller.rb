@@ -6,8 +6,9 @@ class HomeController < ApplicationController
 
 
   def dashboard
-    @assignments = Assignment.all
-    @assignments_by_date = @assignments.group_by(&:duedate)
+    # @assignments = Assignment.all
+    @assignments = @auth.klasses.map(&:assignments)
+    @assignments_by_date = @assignments.flatten.group_by(&:duedate)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
   end

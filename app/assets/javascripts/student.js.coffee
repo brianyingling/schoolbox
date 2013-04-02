@@ -1,5 +1,15 @@
 class Student
   @document_ready: ->
-    # $('#students').dataTable()
+    $('#Klasses').change(Student.route_to_enroll)
+    #   alert("hello")
+    #   window.location = '/students/enroll'
 
+  @route_to_enroll: ->
+    id = $('#Klasses option:selected').val();
+    $.ajax({
+      url: '/klasses/'+id+'/update_roster/'
+      type: 'post',
+      data: {"Klasses" : id},
+      dataType: 'script',
+      });
 $(document).ready(Student.document_ready)

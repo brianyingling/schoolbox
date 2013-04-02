@@ -29,5 +29,14 @@ class KlassesController < ApplicationController
     render :json => roster
   end
 
+  def update_roster
+    @klass = Klass.find(params[:id])
+    @students = Student.all
+  end
+
+  def enroll_students
+    binding.pry
+  end
+
 
 end

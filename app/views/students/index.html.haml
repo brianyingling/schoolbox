@@ -1,10 +1,10 @@
-= form_tag '/enroll' do
+= form_tag 'students/enroll', :remote=>true  do
   .row
     .6-large.columns
       %h1 Students
-      = select_tag "Courses", options_from_collection_for_select(@auth.klasses.map(&:course), "id", "name")
-      = submit_tag "Enroll", :class=>'button radius tiny'
-    .6-large.columns
+      = select_tag "Klasses", options_from_collection_for_select(@auth.klasses.map{|klass| klass}, "id", "name_and_period"), :selected=>@auth.klasses.first
+      = submit_tag "Enroll", :class=>'button radius tiny', :remote=>true
+  .6-large.columns
   .row
     .12-large.columns
       #student_list

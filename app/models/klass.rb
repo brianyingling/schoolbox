@@ -16,4 +16,9 @@ class Klass < ActiveRecord::Base
   has_and_belongs_to_many :posts
   has_and_belongs_to_many :students
   has_and_belongs_to_many :assignments
+
+  def name_and_period
+    "#{self.course.name} - Period #{self.period}"
+  end
+
 end

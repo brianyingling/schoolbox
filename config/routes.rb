@@ -8,6 +8,18 @@ Schoolbox::Application.routes.draw do
     end
   end
 
+  resources :students do
+    collection do
+      post 'enroll'
+    end
+  end
+
+  resources :klasses do
+    member do
+      post 'update_roster'
+    end
+  end
+
   get '/dashboard'=>'home#dashboard'
 
   get '/login'=>'session#new'
