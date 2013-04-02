@@ -1,6 +1,6 @@
 class Assignment
   @document_ready: ->
-    $('#assignment_duedate').datepicker({dateFormat: 'yy -mm-dd'})
+    $('#assignment_duedate').datepicker({dateFormat: 'yy-mm-dd'})
     $('body').on('click', '.grade_td', Assignment.add_input_text_field)
     $('.tablerow').hover(Assignment.show_graph)
 
