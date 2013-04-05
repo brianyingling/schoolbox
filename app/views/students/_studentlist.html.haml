@@ -7,6 +7,7 @@
       %td Email
       %td Gender
       %td Username
+      %td Address
   %tbody
     - @students.each do |student|
       %tr
@@ -15,5 +16,6 @@
         %td= student.last_name
         %td= student.email
         %td= student.gender
+        %td= student.username
         %td= student.address
 / = select_tag @auth.klasses.map(&:course).map(&:name).join(', ') if @auth.is_a?(Teacher)

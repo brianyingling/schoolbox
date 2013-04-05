@@ -10,6 +10,7 @@ class HomeController < ApplicationController
     @assignments = @auth.klasses.map(&:assignments).sort_by{|duedate| duedate}.reverse
     @assignments_by_date = @assignments.flatten.group_by(&:duedate)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @post = Post.new
 
   end
 

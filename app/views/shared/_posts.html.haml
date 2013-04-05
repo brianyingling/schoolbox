@@ -1,7 +1,21 @@
-- @auth.klasses.each do |klass|
+- @auth.klasses.each_with_index do |klass, i|
   %h6= "#{klass.course.name}, Period #{klass.period}"
-  = link_to "New Post", new_post_path, :class=>'button radius tiny success'
+  / = link_to "New Post", new_post_path, :class=>'button radius tiny success new_post_link', :id=>"new_post_link_#{i}"
   - klass.posts.each do |post|
+    / #post_form
+    /   = form_for @post do |f|
+    /     = f.label       :title
+    /     = f.text_field  :title
+    /     = f.label       :message
+    /     = f.text_area   :message
+    /     = f.hidden_field :teacher_id, :value=>@auth.id
+    /     - @auth.courses.each do |course|
+    /       - course.klasses.each do |klass|
+    /         %div
+    /         = check_box_tag "post[klass_ids][]", klass.id
+    /         = "#{course.name} Period #{klass.period}"
+    /     = submit_tag "Create Post", :method=>'post', :class=>'button success tiny'
+    /     = link_to("Cancel", nil, :class=>'button tiny alert post_form_cancel_btn', :id=>"post_form_cancel_btn_#{i}")
     .post
       .title= post.title
       .tagline= "Posted for #{klass.course.name} on #{post.postdate}"
