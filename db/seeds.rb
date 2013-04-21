@@ -13,75 +13,37 @@ Post.delete_all
 Comment.delete_all
 Assignment.delete_all
 Grade.delete_all
+Unit.delete_all
 
 
 c1 = Course.create(:name=>'US History I', :description=>'This is US History I. This course covers from the early Colonial America period to the end of World War I. It reviews concepts that coorespond to the foundation of the Republic, the impact of slavery leading up to the Civil War and industrialization in the late 1800s-early 1900s. This course is geared towards sophomores.')
 c2 = Course.create(:name=>'World History', :description=>'This is world history. This course takes a thematic approach to studying the world. The first quarter discusses revolutionary ideas that occurred during the Reformation and the French Revolution, Middle Eastern themes, topics in East Asia, and lastly totalitarianism and World Wars I and II.')
 c3 = Course.create(:name=>'GA Web Development Immersive', :description=>'This is WDI. It is immersive. We learn everything from the basics of programming using Ruby, the inner workings of a small web framework called Sinatra, and later students move towards Ruby on Rails. Topics also include computer science theory, test driven development, and the latest front-end development techniques using JavaScript.')
 
+u1 = Unit.create(:title=>'Colonial America',:description=>'This unit covers the time period from early colonial America to the postrevolutionary period.')
+u2 = Unit.create(:title=>'Revolutionary War',:description=>'This unit covers the causes and effects of the American Revolution.')
+
 t1 = Teacher.create(:username=>'myingling',:email=>'m_rogers3@hotmail.com',:first_name=>"Melissa",:last_name=>'Yingling',:password=>'myingling',:password_confirmation=>'myingling', :appellation=>'Mrs.')
 t2 = Teacher.create(:username=>'byingling',:email=>'byingling@gmail.com',:first_name=>"Brian",:last_name=>'Yingling',:password=>'byingling',:password_confirmation=>'byingling', :appellation=>'Mr.')
 t3 = Teacher.create(:username=>'chyld',:email=>'chyld@chyld.com',:first_name=>"Chyld",:last_name=>'Medford',:password=>'chyld',:password_confirmation=>'chyld', :appellation=>'Mr.')
 
 s1 = Student.create(:username=>'alex',:email=>'me@alexfogg.com',:first_name=>'Alex',:last_name=>'Fogg', :password=>'alex',:password_confirmation=>'alex',:address=>'Princeton, NJ');
-
 s2 = Student.create(:username=>'bryan',:email=>'holla@bryanweid.com',:first_name=>'Bryan',:last_name=>'Reid', :password=>'bryan',:password_confirmation=>'bryan',:address=>'New York, NY');
-
 s3 = Student.create(:username=>'tony',:email=>'tony.contreras@gmail.com',:first_name=>'Tony',:last_name=>'Contretras', :password=>'tony',:password_confirmation=>'tony',:address=>'New York, NY');
-
 s4 = Student.create(:username=>'ron',:email=>'rrrron@gmail.com',:first_name=>'Ron',:last_name=>'Jones', :password=>'ron',:password_confirmation=>'ron',:address=>'Amsterdam, The Netherlands');
-
 s5 = Student.create(:username=>'adi',:email=>'adityasingh89@gmail.com',:first_name=>'Adi',:last_name=>'Singh', :password=>'adi',:password_confirmation=>'adi',:address=>'Princeton, NJ');
-
 s6 = Student.create(:username=>'stephen',:email=>'donoage@gmail.com',:first_name=>'Stephen',:last_name=>'Bae', :password=>'stephen',:password_confirmation=>'stephen',:address=>'New York, NY');
-
 s7 = Student.create(:username=>'matt',:email=>'matthewgalvin908@gmail.com',:first_name=>'Matt',:last_name=>'Galvin', :password=>'alex',:password_confirmation=>'alex',:address=>'Morristown, NJ');
-
 s8 = Student.create(:username=>'Shefali',:email=>'musictechgirl@gmail.com',:first_name=>'Shefali',:last_name=>'Kumar', :password=>'shefali',:password_confirmation=>'shefali',:address=>'Hong Kong, China');
-
 s9 = Student.create(:username=>'jill',:email=>'jillian.youngblood@gmail.com',:first_name=>'Jill',:last_name=>'Youngblood', :password=>'jill',:password_confirmation=>'jill',:address=>'New York, NY');
-
 s10 = Student.create(:username=>'ralph',:email=>'ralphbernardo@gmail.com',:first_name=>'Ralph',:last_name=>'Bernardo', :password=>'ralph',:password_confirmation=>'ralph',:address=>'Westchester, NY');
-
 s11 = Student.create(:username=>'sandip',:email=>'trivedi.sandip@gmail.com',:first_name=>'Sandip',:last_name=>'Trivedi', :password=>'sandip',:password_confirmation=>'sandip',:address=>'Philadelphia, PA');
-
 s12 = Student.create(:username=>'jane',:email=>'janesternbach@gmail.com',:first_name=>'Jane',:last_name=>'Sternbach', :password=>'jane',:password_confirmation=>'jane',:address=>'New York, NY');
-
 s13 = Student.create(:username=>'sean',:email=>'seanwdicourse@gmail.com',:first_name=>'Sean',:last_name=>'Marzug-McCarthy', :password=>'sean',:password_confirmation=>'sean',:address=>'New York, NY');
-
 s14 = Student.create(:username=>'ryan',:email=>'rlee1121@gmail.com',:first_name=>'Ryan',:last_name=>'Lee', :password=>'ryan',:password_confirmation=>'ryan',:address=>'New York, NY');
-
 s15 = Student.create(:username=>'ben',:email=>'benjamin_clayman@alumni.brown.edu',:first_name=>'Ben',:last_name=>'Clayman', :password=>'ben',:password_confirmation=>'ben',:address=>'Providence, RI');
-
 s16 = Student.create(:username=>'nicky',:email=>'nickyhughes00@gmail.com',:first_name=>'Nicky',:last_name=>'Hughes', :password=>'nicky',:password_confirmation=>'nicky',:address=>'Sydney, Australia');
-
 s17 = Student.create(:username=>'jeff',:email=>'JeffreyEricKatz@gmail.com',:first_name=>'Jeff',:last_name=>'Katz', :password=>'jeff',:password_confirmation=>'jeff',:address=>'Raleigh, NC');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # s1 = Student.create(:username=>'bob',:email=>'bob@gmail.com',:password=>'bob',:password_confirmation=>'bob', :first_name=>'Bob',:last_name=>'Smith',:address=>'10 E 21st St, NY, NY')
 # s2 = Student.create(:username=>'jane', :password=>'jane',:password_confirmation=>'jane', :first_name=>'Jane', :last_name=>'Smith',:address=>'10 E 21st St, NY, NY',:email=>'jane@gmail.com')
@@ -156,6 +118,10 @@ k3.posts << p2
 k1.assignments << a1
 k2.assignments << a2
 k3.assignments << a3
+
+
+#  Add units
+c1.units << u1 << u2
 
 
 ##### Seeding GA Immersive Class

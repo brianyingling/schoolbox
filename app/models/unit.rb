@@ -12,4 +12,5 @@
 
 class Unit < ActiveRecord::Base
   attr_accessible :title, :description
+  belongs_to :course
 end

@@ -15,5 +15,6 @@ class Course < ActiveRecord::Base
   attr_accessible :name, :description, :teacher_id, :calendar_id
   belongs_to :teacher
   has_many :klasses
+  has_many :units
   has_one :calendar
 end

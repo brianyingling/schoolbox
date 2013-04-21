@@ -18,6 +18,7 @@ describe Course do
   let(:teacher) {FactoryGirl.create(:teacher)}
   let(:klass1) {FactoryGirl.create(:klass_period1)}
   let(:klass2) {FactoryGirl.create(:klass_period1)}
+  let(:unit) {FactoryGirl.create(:unit)}
   describe '.new' do
     it 'creates a Course object' do
       expect(course).to be_an_instance_of(Course)
@@ -47,6 +48,13 @@ describe Course do
     it 'has an array of klass objects' do
       course.klasses << klass1 << klass2
       expect(course.klasses.first).to be_an_instance_of(Klass)
+    end
+  end
+
+  describe '#units' do
+    it 'has an array of unit objects' do
+      course.units << unit
+      expect(course.units.first).to be_an_instance_of(Unit)
     end
   end
 end
