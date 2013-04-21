@@ -6,13 +6,11 @@
         %h5= post.title
         .edit_area= post.message
         - if post.klasses.present?
-          %div= "Posted in #{post.klasses.map(&:course).map(&:name).join(', ')} by #{post.teacher.name}"
-        %p= post.created_at
+          %div= "Posted in #{post.klasses.map(&:course).map(&:name).join(', ')} by #{post.teacher.name} on #{format_date(post.created_at)}"
         = hidden_field_tag @auth.id
         = link_to "Edit", edit_post_path(post.id), :class=>'button radius tiny'
         = link_to "Delete", post, :method=>'delete', :class=>'button radius tiny', :confirm=>'Are you sure?', :id=>"delete_post_link_#{post.id}"
       - post.comments.each do |comment|
         .comment
           %h6= comment.text
-          %p= "Posted by #{comment.student.first_name} #{comment.student.last_name}"
-          %p= comment.created_at
+          %p.byline= "Posted by #{comment.student.first_name} #{comment.student.last_name} on #{format_date(comment.created_at)}"

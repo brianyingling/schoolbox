@@ -1,8 +1,8 @@
 .post
   %h5= @post.title
   .edit_area= @post.message
-  .post_meta= @post.created_at.to_datetime.strftime('%A, %B %d %Y')
-  %p= @post.created_at
+  .post_meta= format_date(@post.created_at)
+  %p= format_date(@post.created_at)
   = hidden_field_tag @auth.id
   = link_to "Edit", edit_post_path(@post.id), :class=>'button radius tiny'
   = link_to "Delete", @post, :method=>'delete', :class=>'button radius tiny alert'

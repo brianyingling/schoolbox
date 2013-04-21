@@ -19,5 +19,6 @@
         %h4 My Notes
       %div.droppable
         %h4 Upcoming Events
-      %div
-        %h4 My Grades
+      - if @auth.is_a?(Student)
+        %div
+          %h4 My Grades
