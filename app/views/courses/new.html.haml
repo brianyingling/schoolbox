@@ -1,19 +1,19 @@
 .container
-%br
-.row
-  .large-12.columns{:style=>'background:#fff;opacity:0.9;'}
-    %h3 New Course
-.row
-  .large-12.columns{:style=>'background:#fff;opacity:0.9;'}
-    = form_for @course do |f|
-      = f.label       :name
-      = f.text_field  :name, :autofocus=>true
-      = f.label       :description
-      = f.text_area   :description
-      %h4 Teacher
-      %ul
-      - Teacher.all.each do |teacher|
-        %li
-          = f.radio_button('teacher_id', teacher.id)
-          %span= teacher.first_name + " " + teacher.last_name
-      = f.submit
+  %br
+  .row
+    .large-12.columns{:style=>'background:#fff;opacity:0.9;'}
+      %h3 New Course
+  .row.content
+    .large-12.columns{:style=>'background:#fff;opacity:0.9;'}
+      = form_for @course do |f|
+        = f.label       :name
+        = f.text_field  :name, :autofocus=>true
+        = f.label       :description
+        = f.text_area   :description
+        %h4 Teacher
+        %ul
+        - Teacher.all.each do |teacher|
+          %li
+            = f.radio_button('teacher_id', teacher.id)
+            %span= teacher.first_name + " " + teacher.last_name
+        = f.submit
