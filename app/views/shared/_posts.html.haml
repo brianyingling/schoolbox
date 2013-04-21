@@ -12,5 +12,5 @@
         - post.comments.each do |comment|
           .comment
             = comment.text
-            .tagline= "Posted by #{comment.student.name} on #{format_date(comment.created_at}"
+            .tagline= "Posted by #{comment.student.name} on #{format_date(comment.created_at)}"
       %br
