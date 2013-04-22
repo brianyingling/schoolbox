@@ -1,0 +1,15 @@
+- if @auth.notes.empty?
+  %p You have no notes.
+- else
+  %ul
+    - @auth.notes.each do |note|
+      %li
+        = note.text
+        = hidden_field_tag  :note_id, note.id
+        = hidden_field_tag :token, form_authenticity_token
+        %a{:class=>'cancel_link', :id=>"cancel_link_#{note.id}", :href=>'#'} X
+
+= form_for @note, :remote=>true do |f|
+  = f.text_area       :text
+  = hidden_field_tag  :id, @auth.id
+  = f.submit          "Add a Note"

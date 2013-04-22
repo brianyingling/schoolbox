@@ -5,6 +5,9 @@ module ApplicationHelper
       nav += "<li class='has-dropdown'>"
         nav += "<a href='#' id='course_menu_link' class='navlinks'>Courses</a>"
           nav += "<ul class='dropdown'>"
+          @auth.courses.each do |course|
+            nav += "<li>" + link_to(course.name, course_path(course.id), :class=>'navlinks') + "</li>"
+          end
           nav += "<li>" + link_to("Add Course", new_course_path, :id=>'add_course_link', :class=>'navlinks')
           nav += "<li>" + link_to("View Courses", courses_path, :id=>'view_course_link', :class=>'navlinks') + "</li></ul>"
       nav += "<li class='has-dropdown'>"

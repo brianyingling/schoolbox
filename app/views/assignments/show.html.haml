@@ -1,13 +1,11 @@
-%br
-.row.content
-  .row
-    .12-large.columns
-      %h1 Assignment
-      %h2= @assignment.name
-      %p= @assignment.description
-  .row
-    .large-12.columns
-      %h3 Students Assigned to This Assignment:
-  .row
-    #assigngrades
-      = render :partial=>'shared/assigngrades.js.haml'
+.row
+  .12-large.columns
+    %h2= @assignment.name
+    %p= @assignment.description
+    %p= "Duedate: #{format_date(@assignment.duedate)}"
+.row
+  .large-12.columns
+    %h3 Students Assigned to This Assignment:
+.row
+  #assigngrades
+    = render :partial=>'shared/assigngrades.js.haml'

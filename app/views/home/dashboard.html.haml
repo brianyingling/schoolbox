@@ -1,5 +1,8 @@
 .page
   .row
+    .large-12.columns
+      %h3= "Hello, #{@auth.name}"
+  .row
     .large-3.columns.borders-left-col
       %div
         = render :partial=>'calendar'
@@ -8,8 +11,7 @@
         %ul
           - @auth.klasses.order(:period).each do |klass|
             %li
-              = klass.course.name
-              = "Period #{klass.period}"
+              = link_to "#{klass.course.name} Period #{klass.period}", klass
     .large-6.columns.borders-middle-col
       %div
         %h5 Discussion Questions
@@ -17,6 +19,8 @@
     .large-3.columns.borders-right-col
       %div
       %h6 My Notes
+      .notes
+        = render :partial => 'notes/new'
       %div.droppable
         %h6 Upcoming Events
       - if @auth.is_a?(Student)

@@ -7,6 +7,26 @@ $(function() {
   $('body').on('click', 'tr', show_roster);
   $('#comments').on('click', '.new_comment_btn', show_comment_form);
   $('body').on('click', '.new_comment_cancel_btn',hide_comment_form);
+  $('body').on('click','.notes ul li .cancel_link', delete_note);
+
+
+
+  // makes an AJAX call to delete a note
+  function delete_note() {
+    console.log('deleting note...');
+    li = $(this).parent();
+    token = $(this).parent().find('#token').val();
+    id = $(this).parent().find('#note_id').val();
+    // make ajax call
+    $.ajax({
+      dataType: 'script',
+      type: 'post',
+      url: '/notes/' + id,
+      data: {_method:'delete',authenticity_token:token,id:id }
+    }).done();
+
+
+  }
 
   // jeditable
   function show_comment_form() {

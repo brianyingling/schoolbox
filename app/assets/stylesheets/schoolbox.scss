@@ -1,3 +1,7 @@
+p {
+  font-size: 14px;
+}
+
 .row {
   /*background: #fff;*/
   /*opacity: 0.9;*/
@@ -196,7 +200,7 @@ table.calendar {
   float: left;
   position: absolute;
   min-width: 300px;
-  background-color: rgb(234,230,160);
+  background-color: lightyellow;
   border: 2px dotted gray;
   padding: 10px;
   z-index: 9999;
@@ -321,4 +325,45 @@ span.month {
 .footer_font {
   font-size: 12px;
 }
+
+.notes ul {
+  position: relative;
+}
+
+.profile_pic {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+}
+
+.notes ul li {
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  background-color: lightyellow;
+  border: 1px dotted black;
+  position: relative;
+
+ .cancel_link {
+  position: absolute;
+  height:20px;
+  width: 20px;
+  top: -5px;
+  right: -3px;
+  border-radius: 100%;
+  background-color: darkred;
+  padding: 0;
+  font-weight: bold;
+  font-size: 14px;
+  color: yellow;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+
+
+}
+
+
 
