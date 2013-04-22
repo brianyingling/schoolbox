@@ -17,7 +17,7 @@
             %tr
               %td= link_to assignment.name, assignment_path(assignment.id)
               %td= assignment.description
-              %td= assignment.duedate
+              %td= format_date(assignment.duedate)
               %td= assignment.value
               %td
                 = link_to "Edit", edit_assignment_path(assignment.id), :class=>'button radius tiny success'

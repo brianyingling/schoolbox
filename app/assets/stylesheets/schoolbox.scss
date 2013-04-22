@@ -1,13 +1,19 @@
 .row {
-  background: #fff;
+  /*background: #fff;*/
   opacity: 0.9;
+}
+
+.container {
+  border-radius: 25px;
 }
 
 .content {
   min-height: 400px;
   background: #fff;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 5px 5px 35px black;
 }
-
 
 
 .navlinks {
@@ -75,14 +81,6 @@ body {
   min-height: 500px;
 }
 
-/*.post {
-  margin: 20px 0;
-  background-color: #eee;
-  border-radius: 5px;
-  padding: 5px;
-  box-shadow: 5px 5px 25px gray;
-}
-*/
 .post-title {
   font-weight: bold;
 }
