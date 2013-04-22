@@ -1,19 +1,17 @@
-.container
-  %br
-  .row.content{:style=>'background:#fff;opacity:0.9;'}
-    .large-4.columns
-      %h3 New Class
-      = form_for @klass do |f|
-        %h4 Course
-        = f.label       :school_year
-        = f.text_field  :schoolyear
-        %ul
-          - @auth.courses.each do |course|
-            %li
-              = radio_button_tag "klass[course_id]", course.id
-              = course.name
+.row
+  .large-4.columns
+    %h3 New Class
+    = form_for @klass do |f|
+      %h4 Course
+      = f.label       :school_year
+      = f.text_field  :schoolyear
+      %ul
+        - @auth.courses.each do |course|
+          %li
+            = radio_button_tag "klass[course_id]", course.id
+            = course.name
 
-        %h4 Period:
-        = select_tag "klass[period]", (1..9).map {|num| "<option>#{num}</option>" }.join('').html_safe
-        = f.submit "Create Class"
-    .large-8.columns
+      %h4 Period:
+      = select_tag "klass[period]", (1..9).map {|num| "<option>#{num}</option>" }.join('').html_safe
+      = f.submit "Create Class"
+  .large-8.columns

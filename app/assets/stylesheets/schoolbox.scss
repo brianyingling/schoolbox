@@ -14,10 +14,9 @@ input[type='text'], textarea {
 .content {
   min-height: 400px;
   background: #fff;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  box-shadow: 5px 5px 15px #252525;
-  /*border: 7px solid #542b19;*/
+  border-radius: 0.8em;
+  box-shadow: 5px 5px 25px black;
+  border: 7px solid #542b19;
 
 }
 
@@ -112,7 +111,6 @@ footer {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   z-index: 100;
-  box-shadow: 10px 10px 15px #252525;
 }
 
 tr.klass:hover {
@@ -272,7 +270,9 @@ table.calendar {
 }
 
 .comment {
+  font-size: 12px;
   .tagline {
+    font-size: 12px;
     margin-top: 10px;
     font-weight: italic;
   }

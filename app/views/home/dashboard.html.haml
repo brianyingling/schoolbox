@@ -1,6 +1,5 @@
-%br
 .page
-  .row.content
+  .row
     .large-3.columns.borders-left-col
       %div
         = render :partial=>'calendar'
@@ -13,7 +12,7 @@
               = "Period #{klass.period}"
     .large-6.columns.borders-middle-col
       %div
-        %h6 Discussion Questions
+        %h5 Discussion Questions
         = render :partial=>'shared/posts'
     .large-3.columns.borders-right-col
       %div
