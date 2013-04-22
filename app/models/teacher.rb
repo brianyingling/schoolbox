@@ -18,6 +18,7 @@ class Teacher < ActiveRecord::Base
   has_secure_password
   has_many :posts
   has_many :courses
+  has_many :notes
   has_many :klasses, :through=> :courses
   validates :username, :uniqueness =>true
   validates :email, :uniqueness => true
