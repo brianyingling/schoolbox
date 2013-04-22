@@ -1,25 +1,25 @@
 %br
 .page
   .row.content
-    .large-3.columns
+    .large-3.columns.borders-left-col
       %div
         = render :partial=>'calendar'
       %div
-        %h4 My Schedule
+        %h5 My Schedule
         %ul
           - @auth.klasses.order(:period).each do |klass|
             %li
               = klass.course.name
               = "Period #{klass.period}"
-    .large-6.columns
+    .large-6.columns.borders-middle-col
       %div
-        %h4 Discussion Questions
+        %h6 Discussion Questions
         = render :partial=>'shared/posts'
-    .large-3.columns
+    .large-3.columns.borders-right-col
       %div
-        %h4 My Notes
+        %h6 My Notes
       %div.droppable
-        %h4 Upcoming Events
+        %h6 Upcoming Events
       - if @auth.is_a?(Student)
         %div
-          %h4 My Grades
+          %h6 My Grades
