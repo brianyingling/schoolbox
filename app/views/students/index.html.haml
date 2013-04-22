@@ -1,11 +1,13 @@
-= form_tag 'students/enroll', :remote=>true  do
-  .row
+%br
+.row.content
+  = form_tag 'students/enroll', :remote=>true  do
+    .row
+      .6-large.columns
+        %h1 Students
+        = select_tag "Klasses", options_from_collection_for_select(@auth.klasses.map{|klass| klass}, "id", "name_and_period"), :selected=>@auth.klasses.first
+        = submit_tag "Enroll", :class=>'button radius tiny', :remote=>true
     .6-large.columns
-      %h1 Students
-      = select_tag "Klasses", options_from_collection_for_select(@auth.klasses.map{|klass| klass}, "id", "name_and_period"), :selected=>@auth.klasses.first
-      = submit_tag "Enroll", :class=>'button radius tiny', :remote=>true
-  .6-large.columns
-  .row
-    .12-large.columns
-      #student_list
-        = render :partial=>'studentlist'
+    .row
+      .12-large.columns
+        #student_list
+          = render :partial=>'studentlist'
