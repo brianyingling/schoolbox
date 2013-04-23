@@ -27,23 +27,23 @@ t1 = Teacher.create(:username=>'myingling',:email=>'m_rogers3@hotmail.com',:firs
 t2 = Teacher.create(:username=>'byingling',:email=>'byingling@gmail.com',:first_name=>"Brian",:last_name=>'Yingling',:password=>'byingling',:password_confirmation=>'byingling', :appellation=>'Mr.')
 t3 = Teacher.create(:username=>'chyld',:email=>'chyld@chyld.com',:first_name=>"Chyld",:last_name=>'Medford',:password=>'chyld',:password_confirmation=>'chyld', :appellation=>'Mr.')
 
-s1 = Student.create(:username=>'alex',:email=>'me@alexfogg.com',:first_name=>'Alex',:last_name=>'Fogg', :password=>'alex',:password_confirmation=>'alex',:address=>'Princeton, NJ');
-s2 = Student.create(:username=>'bryan',:email=>'holla@bryanweid.com',:first_name=>'Bryan',:last_name=>'Reid', :password=>'bryan',:password_confirmation=>'bryan',:address=>'New York, NY');
-s3 = Student.create(:username=>'tony',:email=>'tony.contreras@gmail.com',:first_name=>'Tony',:last_name=>'Contretras', :password=>'tony',:password_confirmation=>'tony',:address=>'New York, NY');
-s4 = Student.create(:username=>'ron',:email=>'rrrron@gmail.com',:first_name=>'Ron',:last_name=>'Jones', :password=>'ron',:password_confirmation=>'ron',:address=>'Amsterdam, The Netherlands');
-s5 = Student.create(:username=>'adi',:email=>'adityasingh89@gmail.com',:first_name=>'Adi',:last_name=>'Singh', :password=>'adi',:password_confirmation=>'adi',:address=>'Princeton, NJ');
-s6 = Student.create(:username=>'stephen',:email=>'donoage@gmail.com',:first_name=>'Stephen',:last_name=>'Bae', :password=>'stephen',:password_confirmation=>'stephen',:address=>'New York, NY');
-s7 = Student.create(:username=>'matt',:email=>'matthewgalvin908@gmail.com',:first_name=>'Matt',:last_name=>'Galvin', :password=>'alex',:password_confirmation=>'alex',:address=>'Morristown, NJ');
-s8 = Student.create(:username=>'Shefali',:email=>'musictechgirl@gmail.com',:first_name=>'Shefali',:last_name=>'Kumar', :password=>'shefali',:password_confirmation=>'shefali',:address=>'Hong Kong, China');
-s9 = Student.create(:username=>'jill',:email=>'jillian.youngblood@gmail.com',:first_name=>'Jill',:last_name=>'Youngblood', :password=>'jill',:password_confirmation=>'jill',:address=>'New York, NY');
-s10 = Student.create(:username=>'ralph',:email=>'ralphbernardo@gmail.com',:first_name=>'Ralph',:last_name=>'Bernardo', :password=>'ralph',:password_confirmation=>'ralph',:address=>'Westchester, NY');
-s11 = Student.create(:username=>'sandip',:email=>'trivedi.sandip@gmail.com',:first_name=>'Sandip',:last_name=>'Trivedi', :password=>'sandip',:password_confirmation=>'sandip',:address=>'Philadelphia, PA');
-s12 = Student.create(:username=>'jane',:email=>'janesternbach@gmail.com',:first_name=>'Jane',:last_name=>'Sternbach', :password=>'jane',:password_confirmation=>'jane',:address=>'New York, NY');
-s13 = Student.create(:username=>'sean',:email=>'seanwdicourse@gmail.com',:first_name=>'Sean',:last_name=>'Marzug-McCarthy', :password=>'sean',:password_confirmation=>'sean',:address=>'New York, NY');
-s14 = Student.create(:username=>'ryan',:email=>'rlee1121@gmail.com',:first_name=>'Ryan',:last_name=>'Lee', :password=>'ryan',:password_confirmation=>'ryan',:address=>'New York, NY');
-s15 = Student.create(:username=>'ben',:email=>'benjamin_clayman@alumni.brown.edu',:first_name=>'Ben',:last_name=>'Clayman', :password=>'ben',:password_confirmation=>'ben',:address=>'Providence, RI');
-s16 = Student.create(:username=>'nicky',:email=>'nickyhughes00@gmail.com',:first_name=>'Nicky',:last_name=>'Hughes', :password=>'nicky',:password_confirmation=>'nicky',:address=>'Sydney, Australia');
-s17 = Student.create(:username=>'jeff',:email=>'JeffreyEricKatz@gmail.com',:first_name=>'Jeff',:last_name=>'Katz', :password=>'jeff',:password_confirmation=>'jeff',:address=>'Raleigh, NC');
+s1 = Student.create(:username=>'alex',:email=>'me@alexfogg.com',:first_name=>'Alex',:last_name=>'Fogg', :password=>'alex',:password_confirmation=>'alex',:address=>'Princeton, NJ', :gender=>'m');
+s2 = Student.create(:username=>'bryan',:email=>'holla@bryanweid.com',:first_name=>'Bryan',:last_name=>'Reid', :password=>'bryan',:password_confirmation=>'bryan',:address=>'New York, NY', :gender=>'m');
+s3 = Student.create(:username=>'tony',:email=>'tony.contreras@gmail.com',:first_name=>'Tony',:last_name=>'Contretras', :password=>'tony',:password_confirmation=>'tony',:address=>'New York, NY', :gender=>'m');
+s4 = Student.create(:username=>'ron',:email=>'rrrron@gmail.com',:first_name=>'Ron',:last_name=>'Jones', :password=>'ron',:password_confirmation=>'ron',:address=>'Amsterdam, The Netherlands', :gender=>'m');
+s5 = Student.create(:username=>'adi',:email=>'adityasingh89@gmail.com',:first_name=>'Adi',:last_name=>'Singh', :password=>'adi',:password_confirmation=>'adi',:address=>'Princeton, NJ', :gender=>'m');
+s6 = Student.create(:username=>'stephen',:email=>'donoage@gmail.com',:first_name=>'Stephen',:last_name=>'Bae', :password=>'stephen',:password_confirmation=>'stephen',:address=>'New York, NY', :gender=>'m');
+s7 = Student.create(:username=>'matt',:email=>'matthewgalvin908@gmail.com',:first_name=>'Matt',:last_name=>'Galvin', :password=>'alex',:password_confirmation=>'alex',:address=>'Morristown, NJ', :gender=>'m');
+s8 = Student.create(:username=>'Shefali',:email=>'musictechgirl@gmail.com',:first_name=>'Shefali',:last_name=>'Kumar', :password=>'shefali',:password_confirmation=>'shefali',:address=>'Hong Kong, China', :gender=>'f');
+s9 = Student.create(:username=>'jill',:email=>'jillian.youngblood@gmail.com',:first_name=>'Jill',:last_name=>'Youngblood', :password=>'jill',:password_confirmation=>'jill',:address=>'New York, NY', :gender=>'f');
+s10 = Student.create(:username=>'ralph',:email=>'ralphbernardo@gmail.com',:first_name=>'Ralph',:last_name=>'Bernardo', :password=>'ralph',:password_confirmation=>'ralph',:address=>'Westchester, NY', :gender=>'m');
+s11 = Student.create(:username=>'sandip',:email=>'trivedi.sandip@gmail.com',:first_name=>'Sandip',:last_name=>'Trivedi', :password=>'sandip',:password_confirmation=>'sandip',:address=>'Philadelphia, PA', :gender=>'m');
+s12 = Student.create(:username=>'jane',:email=>'janesternbach@gmail.com',:first_name=>'Jane',:last_name=>'Sternbach', :password=>'jane',:password_confirmation=>'jane',:address=>'New York, NY', :gender=>'f');
+s13 = Student.create(:username=>'sean',:email=>'seanwdicourse@gmail.com',:first_name=>'Sean',:last_name=>'Marzug-McCarthy', :password=>'sean',:password_confirmation=>'sean',:address=>'New York, NY', :gender=>'m');
+s14 = Student.create(:username=>'ryan',:email=>'rlee1121@gmail.com',:first_name=>'Ryan',:last_name=>'Lee', :password=>'ryan',:password_confirmation=>'ryan',:address=>'New York, NY', :gender=>'m');
+s15 = Student.create(:username=>'ben',:email=>'benjamin_clayman@alumni.brown.edu',:first_name=>'Ben',:last_name=>'Clayman', :password=>'ben',:password_confirmation=>'ben',:address=>'Providence, RI', :gender=>'m');
+s16 = Student.create(:username=>'nicky',:email=>'nickyhughes00@gmail.com',:first_name=>'Nicky',:last_name=>'Hughes', :password=>'nicky',:password_confirmation=>'nicky',:address=>'Sydney, Australia', :gender=>'f');
+s17 = Student.create(:username=>'jeff',:email=>'JeffreyEricKatz@gmail.com',:first_name=>'Jeff',:last_name=>'Katz', :password=>'jeff',:password_confirmation=>'jeff',:address=>'Raleigh, NC', :gender=>'m');
 
 # s1 = Student.create(:username=>'bob',:email=>'bob@gmail.com',:password=>'bob',:password_confirmation=>'bob', :first_name=>'Bob',:last_name=>'Smith',:address=>'10 E 21st St, NY, NY')
 # s2 = Student.create(:username=>'jane', :password=>'jane',:password_confirmation=>'jane', :first_name=>'Jane', :last_name=>'Smith',:address=>'10 E 21st St, NY, NY',:email=>'jane@gmail.com')

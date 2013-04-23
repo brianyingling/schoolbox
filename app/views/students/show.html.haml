@@ -9,7 +9,10 @@
         %div= @student.address
         %div= @student.gender
         %div= @student.email
-        = image_tag 'male.png', :class=>'profile_pic'
+        - if @student.gender == 'f'
+          = image_tag 'female.png', :class=>'profile_pic'
+        - else
+          = image_tag 'male.png', :class=>'profile_pic'
       .large-6.column
         %h5 Courses
         - @student.klasses.each do |klass|
