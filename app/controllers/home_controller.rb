@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     @post = Post.new
     @note = Note.new
-    @notes = @auth.notes
+    @notes = @auth.notes if @auth.is_a?(Teacher)
   end
 
 end

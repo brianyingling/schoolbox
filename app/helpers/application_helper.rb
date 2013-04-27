@@ -6,14 +6,14 @@ module ApplicationHelper
         nav += "<a href='#' id='course_menu_link' class='navlinks'>Courses</a>"
           nav += "<ul class='dropdown'>"
           @auth.courses.each do |course|
+            nav += "<li class='has-dropdown'>" + link_to(course.name, course_path(course.id), :class=>'navlinks')+ "<ul class='dropdown'>"
             if course.klasses.present?
-              nav += "<li class='has-dropdown'>" + link_to(course.name, course_path(course.id), :class=>'navlinks')+ "<ul class='dropdown'>"
               course.klasses.each do |klass|
                 nav += "<li>" + link_to("Period #{klass.period}", klass_path(klass.id), :class=>'navlinks') + "</li>"
               end
-              nav += "<li>" + link_to("Add Section", new_klass_path, :id=>'add_klass_link', :class=>'navlinks')
-              nav += "</ul></li>"
             end
+            nav += "<li>" + link_to("Add Section", new_klass_path, :id=>'add_klass_link', :class=>'navlinks')
+            nav += "</ul></li>"
           end
           nav += "<li>" + link_to("Add Course", new_course_path, :id=>'add_course_link', :class=>'navlinks')
           # nav += "<li>" + link_to("View Courses", courses_path, :id=>'view_course_link', :class=>'navlinks') + "</li>

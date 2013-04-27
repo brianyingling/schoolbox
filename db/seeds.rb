@@ -29,7 +29,7 @@ t3 = Teacher.create(:username=>'chyld',:email=>'chyld@chyld.com',:first_name=>"C
 
 s1 = Student.create(:username=>'alex',:email=>'me@alexfogg.com',:first_name=>'Alex',:last_name=>'Fogg', :password=>'alex',:password_confirmation=>'alex',:address=>'Princeton, NJ', :gender=>'m');
 s2 = Student.create(:username=>'bryan',:email=>'holla@bryanweid.com',:first_name=>'Bryan',:last_name=>'Reid', :password=>'bryan',:password_confirmation=>'bryan',:address=>'New York, NY', :gender=>'m');
-s3 = Student.create(:username=>'tony',:email=>'tony.contreras@gmail.com',:first_name=>'Tony',:last_name=>'Contretras', :password=>'tony',:password_confirmation=>'tony',:address=>'New York, NY', :gender=>'m');
+s3 = Student.create(:username=>'tony',:email=>'tony.contreras@gmail.com',:first_name=>'Tony',:last_name=>'Contreras', :password=>'tony',:password_confirmation=>'tony',:address=>'New York, NY', :gender=>'m');
 s4 = Student.create(:username=>'ron',:email=>'rrrron@gmail.com',:first_name=>'Ron',:last_name=>'Jones', :password=>'ron',:password_confirmation=>'ron',:address=>'Amsterdam, The Netherlands', :gender=>'m');
 s5 = Student.create(:username=>'adi',:email=>'adityasingh89@gmail.com',:first_name=>'Adi',:last_name=>'Singh', :password=>'adi',:password_confirmation=>'adi',:address=>'Princeton, NJ', :gender=>'m');
 s6 = Student.create(:username=>'stephen',:email=>'donoage@gmail.com',:first_name=>'Stephen',:last_name=>'Bae', :password=>'stephen',:password_confirmation=>'stephen',:address=>'New York, NY', :gender=>'m');
@@ -86,8 +86,6 @@ c2.klasses << k2
 c3.klasses << k3
 
 k1.students << s1 << s2 << s3 << s4 << s5 << s6 << s7 << s8 << s9 << s10 << s11 << s12 << s13 << s14 << s15 << s16 << s17
-k1.students << s2
-k1.students << s3
 
 k2.students << s1
 k2.students << s2

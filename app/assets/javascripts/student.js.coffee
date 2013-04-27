@@ -1,8 +1,6 @@
 class Student
   @document_ready: ->
     $('#Klasses').change(Student.route_to_enroll)
-    #   alert("hello")
-    #   window.location = '/students/enroll'
 
   @route_to_enroll: ->
     id = $('#Klasses option:selected').val();

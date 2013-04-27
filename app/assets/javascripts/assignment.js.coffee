@@ -5,8 +5,6 @@ class Assignment
     $('.tablerow').hover(Assignment.show_graph)
 
   @add_input_text_field: ->
-    # alert "Get here"
-    # debugger
     return null if $(this).children('input').length > 0
     if $(this).html == ''
       $(this).prepend("<input type='text' value='' class='test'/>")

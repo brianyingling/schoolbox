@@ -1,39 +1,37 @@
-%br
-.row.content
-  .row
-    .large-12.columns
-      %h3= "Hello #{@auth.first_name} #{@auth.last_name}"
-  .row
-    .large-3.columns.dividers
-      %h4 My Courses
-      %ul
-      - @auth.courses.each do |course|
-        .course_name
-          = link_to course.name, course, :remote=>true
-        %table
-          %tr
-            %td Period
-            %td Options
-          - course.klasses.each do |klass|
-            %tr.klass
-              %td= link_to "Period #{klass.period}", klass
-              %td
-                = link_to "Edit", nil
-                = link_to "Delete", klass, :method=>'delete'
-        = link_to "New Class", new_klass_path, :class=>'button radius tiny'
-    .large-9.columns.dividers
-      %h4 My Posts
-      = link_to "New Post", new_post_path, :id=>'new_post_btn', :remote=>true, :class=>'button radius tiny'
-      .posts
-        - @posts.each do |post|
-          .post
-            %h5= post.title
-            .post_meta= "Posted on " + format_date(post.created_at) + " in " + post.klasses.map {|klass| klass.course.name}.uniq.join(', ')
-            .edit_area= post.message
-            = hidden_field_tag @auth.id
-            = link_to "Edit", edit_post_path(post.id), :remote=>true, :class=>'button radius tiny'
-            = link_to "Delete", post, :method=>'delete', :class=>'button radius tiny alert'
-          - post.comments.each do |comment|
-            .comment
-              %h6= comment.text
-              .byline= "Posted by #{comment.student.first_name} #{comment.student.last_name} on #{format_date(comment.created_at)}"
+.row
+  .large-12.columns
+    %h3= "Hello #{@auth.first_name} #{@auth.last_name}"
+.row
+  .large-3.columns.dividers
+    %h4 My Courses
+    %ul
+    - @auth.courses.each do |course|
+      .course_name
+        = link_to course.name, course, :remote=>true
+      %table
+        %tr
+          %td Period
+          %td Options
+        - course.klasses.each do |klass|
+          %tr.klass
+            %td= link_to "Period #{klass.period}", klass
+            %td
+              = link_to "Edit", nil
+              = link_to "Delete", klass, :method=>'delete'
+      = link_to "New Class", new_klass_path, :class=>'button radius tiny'
+  .large-9.columns.dividers
+    %h4 My Posts
+    = link_to "New Post", new_post_path, :id=>'new_post_btn', :remote=>true, :class=>'button radius tiny'
+    .posts
+      - @posts.each do |post|
+        .post
+          %h5= post.title
+          .post_meta= "Posted on " + format_date(post.created_at) + " in " + post.klasses.map {|klass| klass.course.name}.uniq.join(', ')
+          .edit_area= post.message
+          = hidden_field_tag @auth.id
+          = link_to "Edit", edit_post_path(post.id), :remote=>true, :class=>'button radius tiny'
+          = link_to "Delete", post, :method=>'delete', :class=>'button radius tiny alert'
+        - post.comments.each do |comment|
+          .comment
+            %h6= comment.text
+            .byline= "Posted by #{comment.student.first_name} #{comment.student.last_name} on #{format_date(comment.created_at)}"

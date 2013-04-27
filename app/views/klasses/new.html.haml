@@ -12,6 +12,9 @@
             = course.name
 
       %h4 Period:
-      = select_tag "klass[period]", (1..9).map {|num| "<option>#{num}</option>" }.join('').html_safe
+      / = select_tag "klass[period]", (1..9).map {|num| "<option>#{num}</option>" }.join('').html_safe
+      = select_tag "klass[period]", (1..9).map {|num| "<option>#{num}</option>" if @auth.is_available?(num)}.join('').html_safe
+
+
       = f.submit "Create Class"
   .large-8.columns

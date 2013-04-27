@@ -6,6 +6,7 @@ class Dashboard
     $('body').on('click', '.comments_links', Dashboard.toggle_comments)
     $('body').on('click', '.new_post_link', Dashboard.toggle_form)
     $('body').on('click', '.post_form_cancel_btn', Dashboard.toggle_form)
+    $('body').on('click', '.note', Dashboard.note_draggable)
 
   @visible: ->
     $(this).next().fadeIn(250)
@@ -28,6 +29,10 @@ class Dashboard
 
   @toggle_form:(e) ->
     e.preventDefault()
-    $('#post_form').toggle();
+    $('#post_form').toggle()
+
+  @note_draggable: ->
+    console.log('note draggable')
+    $(this).draggable()
 
 $(document).ready(Dashboard.document_ready)

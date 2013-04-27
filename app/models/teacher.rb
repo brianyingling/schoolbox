@@ -27,4 +27,9 @@ class Teacher < ActiveRecord::Base
     "#{self.appellation} #{self.last_name}"
   end
 
+  def is_available?(period)
+    periods = self.klasses.where(:period=>period)
+    periods.empty?
+  end
+
 end

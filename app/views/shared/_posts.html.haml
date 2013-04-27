@@ -1,6 +1,6 @@
 - @auth.klasses.each_with_index do |klass, i|
   %h6= "#{klass.course.name}, Period #{klass.period}"
-  - klass.posts.each do |post|
+  - klass.posts.order(:created_at).reverse.each do |post|
     .post
       .title= post.title
       .tagline= "Posted for #{klass.course.name} on #{format_date(post.created_at)}"
