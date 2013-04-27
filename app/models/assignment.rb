@@ -15,6 +15,7 @@
 class Assignment < ActiveRecord::Base
   attr_accessible :name, :description, :duedate, :value, :klass_ids, :grade_id
   has_many :grades
+  has_many :students, :through=>:grades
   has_and_belongs_to_many :klasses
 
 end

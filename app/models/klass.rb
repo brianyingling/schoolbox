@@ -28,6 +28,19 @@ class Klass < ActiveRecord::Base
     end
   end
 
+  # returns an array of students and their grade for each assignment.
+  def grades
+    results = []
+    self.assignments.each do |assignment|
+      assignment.grades.each do |grade|
+        results << [grade.student, [assignment, grade]]
+      end
+    end
+    results
+  end
+
+
+
   def name_and_period
     "#{self.course.name} - Period #{self.period}"
   end

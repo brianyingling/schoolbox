@@ -27,7 +27,7 @@
                 - grade.value ||= 0.0
                 - grade.save
             %script
-              = "var percentage = #{(grade.value / @assignment.value.to_f) * 100}"
+              = "var percentage = #{(grade.value.to_f / @assignment.value.to_f) * 100}"
               = "var result = {student:'#{student.first_name} #{student.last_name}',grade:percentage}"
               = "grades.push(result);"
             %td

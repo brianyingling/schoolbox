@@ -21,10 +21,22 @@ class Student < ActiveRecord::Base
   has_and_belongs_to_many :klasses
   has_many :comments
   has_many :grades
+  has_many :assignments, :through=>:grades
   validates :username, :uniqueness => true
   validates :email, :uniqueness => true
+
 
   def name
     "#{self.first_name} #{self.last_name}"
   end
+
+  # calculates's a student's class average
+  # Takes a klass's average
+  def klass_average(k)
+    assignments = self.assignments.select {|a| a.klasses.include?(k)}
+    points_possible = assignments.map(&:value).compact.reduce(:+)
+    points_earned = self.grades.select {|g| assignments.include?(g.assignment)}.map(&:value).compact.reduce(:+)
+    "#{points_earned.to_f / points_possible.to_f * 100}%"
+  end
+
 end
