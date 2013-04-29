@@ -14,6 +14,10 @@ class PostsController < ApplicationController
     @post = Post.create(params[:post])
     @post.postdate = Time.now
     @post.save
+    respond_to do |format|
+      format.html {redirect_to dashboard_path}
+      format.js
+    end
   end
   def show
   end

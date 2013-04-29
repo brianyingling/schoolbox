@@ -1,5 +1,5 @@
 .post_form.post
-  = form_for @post, :remote=>true do |f|
+  = form_for @post do |f|
     = f.label       :title
     = f.text_field  :title
     = f.label       :message

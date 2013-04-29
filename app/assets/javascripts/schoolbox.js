@@ -76,9 +76,9 @@ function hide_login() {
 }
 
 function hide_post_form() {
-   $('#new_post_btn').show();
-   $('.post_form').fadeOut();
-  return false;
+  //  $('#new_post_btn').show();
+  //  $('.post_form').fadeOut();
+  // return false;
 }
 
 

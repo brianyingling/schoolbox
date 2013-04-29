@@ -5,7 +5,7 @@ class Dashboard
     $('body').on('click', '.assignments .cancel_link', Dashboard.invisible)
     $('body').on('click', '.comments_links', Dashboard.toggle_comments)
     $('body').on('click', '.new_post_link', Dashboard.toggle_form)
-    $('body').on('click', '.post_form_cancel_btn', Dashboard.toggle_form)
+    $('body').on('click', '#post_form_cancel_btn', Dashboard.cancel_form)
     $('body').on('click', '.note', Dashboard.note_draggable)
 
   @visible: ->
@@ -27,9 +27,22 @@ class Dashboard
     $(this).html('Show Comments')
     $(this).parent().next().fadeOut(100)
 
+  @cancel_form: (e) ->
+    e.preventDefault
+    $('#post_form').hide()
+    return false
+
   @toggle_form:(e) ->
     e.preventDefault()
-    $('#post_form').toggle()
+    form = $('#post_form')
+    console.log('new post link...');
+    debugger
+    $(this).parent().parent().append(form)
+    if form.css('display') == 'none'
+      form.show()
+    else
+      form.hide()
+    # $('#post_form').toggle()
 
   @note_draggable: ->
     console.log('note draggable')
