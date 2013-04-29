@@ -1,7 +1,6 @@
 Schoolbox::Application.routes.draw do
   root :to=>'home#index'
   resources :teachers, :students, :courses, :klasses, :posts, :comments, :assignments, :grades, :notes
-  # resources :assigments, :only => [:index]
   resources :assignments do
     member do
       post 'assign_grades'

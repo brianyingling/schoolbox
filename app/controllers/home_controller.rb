@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     #redirect_to(@auth, :remote=>true) if @auth.present?
-    redirect_to @auth if @auth.present?
+    redirect_to dashboard_path if @auth.present?
   end
 
 
