@@ -27,3 +27,8 @@
       - if @auth.is_a?(Student)
         %div
           %h6 My Grades
+          %ul.assignmentlist
+            - @grades.each do |grade|
+              %li
+                %div= "#{grade.assignment.name}:"
+                %div= "#{grade.value} / #{grade.assignment.value}"

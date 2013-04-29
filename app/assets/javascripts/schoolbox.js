@@ -5,7 +5,7 @@ $(function() {
   $('body').on('click', '#post_form_cancel_btn', hide_post_form);
   $('body').on('change', '.post', makeEditable);
   $('body').on('click', 'tr', show_roster);
-  $('#comments').on('click', '.new_comment_btn', show_comment_form);
+  $('body').on('click', '.new_comment_btn', show_comment_form);
   $('body').on('click', '.new_comment_cancel_btn',hide_comment_form);
   $('body').on('click','.notes ul li .cancel_link', delete_note);
 
@@ -30,14 +30,17 @@ $(function() {
 
   // jeditable
   function show_comment_form() {
-    //$(this).parent().parent().parent().remove();
-    // $(this).parent().parent().parent().append("<%= j render :partial=>'form' %>");
+    console.log('show comment form function...');
+    form = $(this).parent().parent().find('.comments_form');
+    form.show();
     return false;
   }
 
   function hide_comment_form() {
-    $('.new_comment_form').slideUp();
-    $('.new_comment_btn').show();
+    console.log('hide comment form...');
+    $(this).parent().parent().hide();
+    // $('.new_comment_form').slideUp();
+    // $('.new_comment_btn').show();
     return false;
   }
 

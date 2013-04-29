@@ -8,17 +8,24 @@
       .comments_count
         = pluralize(post.comments.count, 'comment')
         %span.comments_links{:id=>"post_comments_#{post.id}",:style=>"color:blue;cursor:pointer;display:inline-block;"}= "View Comments"
-        %span.new_post_link{:display=>'inline-block',:style=>"color:blue;cursor:pointer;display:inline-block;"} | New Post
+        - if @auth.is_a?(Teacher)
+          %span.new_post_link{:display=>'inline-block',:style=>"color:blue;cursor:pointer;display:inline-block;"} | New Post
+        - else
+          %span.new_comment_btn{:display=>'inline-block',:style=>"color:blue;cursor:pointer;display:inline-block;"} | New Comment
       .comments{:id=>post.id}
         - post.comments.each do |comment|
           .comment
             = comment.text
             .tagline= "Posted by #{comment.student.name} on #{format_date(comment.created_at)}"
       %br
+      .comments_form
+        - if @auth.is_a?(Student)
+          = render(:partial=>'comments/form', :locals=>{:post=>post, :student=>@auth,:comment=>@comment})
+
   - if klass.posts.empty?
     .noposts There are no posts for this course.
     %br
 
-
-#post_form
-  = render :partial=>'posts/form'
+- if @auth.is_a?(Teacher)
+  #post_form
+    = render :partial=>'posts/form'

@@ -7,13 +7,15 @@
         %td Name
         %td Period
         %td Teacher
-        %td Choose
-      - @auth.klasses.each_with_index do |klass, i|
+        - if @auth.is_a?(Teacher)
+          %td Choose
+      - @auth.klasses.sort_by(&:period).each_with_index do |klass, i|
         %tr
           %td= klass.schoolyear
           %td= link_to klass.course.name, klass.course
           %td= klass.period
           %td= link_to klass.course.teacher.first_name + " " + klass.course.teacher.last_name, klass.course.teacher
-          %td
-            = link_to("Edit", edit_klass_path(klass.id), :class=>'button radius tiny success', :id=>"edit_klass_btn_#{i}")
-            = link_to("Delete", klass, :method=>'delete', :class=>'button radius tiny alert', :id=>"delete_klass_btn_#{i}")
+          - if @auth.is_a?(Teacher)
+            %td
+              = link_to("Edit", edit_klass_path(klass.id), :class=>'button radius tiny success', :id=>"edit_klass_btn_#{i}")
+              = link_to("Delete", klass, :method=>'delete', :class=>'button radius tiny alert', :id=>"delete_klass_btn_#{i}")

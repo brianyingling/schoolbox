@@ -10,8 +10,8 @@ class CommentsController < ApplicationController
 
   end
   def create
-    comment = Comment.create(params[:comment])
-    redirect_to comment.student
+    Comment.create(params[:comment])
+    redirect_to dashboard_path
   end
   def edit
     @comment = Comment.find(params[:id])

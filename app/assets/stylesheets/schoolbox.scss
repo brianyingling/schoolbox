@@ -198,6 +198,17 @@ table.calendar {
   color: blue;
 }
 
+ul.assignmentlist {
+  list-style-type: none;
+  li {
+    padding-bottom:10px;
+  }
+  li:hover {
+    background-color:lightblue;
+
+  }
+}
+
 .assignments {
   display: none;
   position: relative;
@@ -284,6 +295,10 @@ table.calendar {
     margin-top: 10px;
     font-weight: italic;
   }
+}
+
+.comments_form {
+  display: none;
 }
 
 .comments_count {

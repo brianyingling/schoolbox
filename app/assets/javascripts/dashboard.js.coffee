@@ -4,6 +4,7 @@ class Dashboard
     $('body').on('dblclick', '.date', Dashboard.invisible)
     $('body').on('click', '.assignments .cancel_link', Dashboard.invisible)
     $('body').on('click', '.comments_links', Dashboard.toggle_comments)
+    $('body').on('click', '.comments_form', Dashboard.show_comments_form)
     $('body').on('click', '.new_post_link', Dashboard.toggle_form)
     $('body').on('click', '#post_form_cancel_btn', Dashboard.cancel_form)
     $('body').on('click', '.note', Dashboard.note_draggable)

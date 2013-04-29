@@ -1,23 +1,21 @@
-- if @auth.is_a?(Student)
-  = render :partial=>'dashboard'
-- else
-  .container
-    %br
-    .row{:style=>'background: #fff;opacity:0.9;'}
-      .large-6.columns
-        %h4= @student.first_name + " " + @student.last_name
-        %div= @student.address
-        %div= @student.gender
-        %div= @student.email
-        - if @student.gender == 'f'
-          = image_tag 'female.png', :class=>'profile_pic'
-        - else
-          = image_tag 'male.png', :class=>'profile_pic'
-        #map
-      .large-6.column
-        %h5 Courses
-        - @student.klasses.each do |klass|
-          %div= link_to klass.course.name, klass.course
-          %div= "Period #{klass.period}"
-          %div= 'School Year ' + klass.schoolyear
-          %br
+.container
+  %br
+  .row{:style=>'background: #fff;opacity:0.9;'}
+    .large-6.columns
+      %h4= @student.first_name + " " + @student.last_name
+      %div= @student.address
+      %div= @student.gender
+      %div= @student.email
+      - if @student.gender == 'f'
+        = image_tag 'female.png', :class=>'profile_pic'
+      - else
+        = image_tag 'male.png', :class=>'profile_pic'
+      #map
+    .large-6.column
+      %h5 Courses
+      - @student.klasses.each do |klass|
+        %div= link_to klass.course.name, klass.course
+        %div= "Period #{klass.period}"
+        %div= 'School Year ' + klass.schoolyear
+        %div= 'Current Average ' + @student.klass_average(klass) if @student.klass_average(klass) != 'NaN%'
+        %br

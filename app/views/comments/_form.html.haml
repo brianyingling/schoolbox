@@ -1,7 +1,6 @@
-.new_comment_form
-  = form_for @comment do |f|
-    = f.text_area       :text
-    = hidden_field_tag  "comment[post_id]", @post.id
-    = hidden_field_tag  "comment[student_id]", @student.id
-    = f.submit          :save
-    = link_to "Cancel", nil, :class=>'button radius tiny alert new_comment_cancel_btn', :id=>'new_comment_cancel_btn'
+= form_for comment do |f|
+  = f.text_area       :text
+  = hidden_field_tag  "comment[post_id]", post.id
+  = hidden_field_tag  "comment[student_id]", student.id
+  = f.submit          :save
+  = link_to "Cancel", nil, :class=>'button radius tiny alert new_comment_cancel_btn', :id=>'new_comment_cancel_btn'

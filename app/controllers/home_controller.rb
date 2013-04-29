@@ -6,12 +6,14 @@ class HomeController < ApplicationController
 
 
   def dashboard
-    @assignments = @auth.klasses.map(&:assignments).sort_by{|duedate| duedate}.reverse
+    @assignments = @auth.klasses.map(&:assignments).sort_by{|duedate| duedate}.reverse.flatten
     @assignments_by_date = @assignments.flatten.group_by(&:duedate)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     @post = Post.new
+    @comment = Comment.new
     @note = Note.new
     @notes = @auth.notes if @auth.is_a?(Teacher)
+    @grades = @auth.grades.order(:created_at) if @auth.is_a?(Student)
   end
 
 end
