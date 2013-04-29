@@ -13,6 +13,7 @@
           = image_tag 'female.png', :class=>'profile_pic'
         - else
           = image_tag 'male.png', :class=>'profile_pic'
+        #map
       .large-6.column
         %h5 Courses
         - @student.klasses.each do |klass|

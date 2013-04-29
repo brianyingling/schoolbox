@@ -36,7 +36,13 @@ class Student < ActiveRecord::Base
     assignments = self.assignments.select {|a| a.klasses.include?(k)}
     points_possible = assignments.map(&:value).compact.reduce(:+)
     points_earned = self.grades.select {|g| assignments.include?(g.assignment)}.map(&:value).compact.reduce(:+)
-    "#{points_earned.to_f / points_possible.to_f * 100}%"
+    "#{(points_earned.to_f / points_possible.to_f * 100).round(1)}%"
   end
+
+  # returns an array of assignments with a given klass
+  def assignments_by_klass(klass)
+    self.assignments.select {|a| klass.assignments.include?(a)}
+  end
+
 
 end

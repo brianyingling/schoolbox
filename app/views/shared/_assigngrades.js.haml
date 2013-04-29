@@ -37,7 +37,8 @@
               = hidden_field_tag "assignment_id", @assignment.id
               = f.submit "Save", :class=>'button radius tiny success'
   .large-8.columns
-    #data
+    #bar
+    #donut
 
 
 
@@ -46,7 +47,7 @@
 %script
   new Morris.Bar({
   // ID of the element in which to draw the chart.
-  element: 'data',
+  element: 'bar',
   // Chart data records -- each entry in this array corresponds to a point on
   // the chart.
   data: grades,
@@ -59,3 +60,25 @@
   labels: ['grade'],
   hideHover: false
   });
+
+  new Morris.Donut({
+  element: donut,
+  data: [
+  {label: 'As', value: _.select(grades,function(grade){return grade.grade > 89}).length},
+  {label: 'Bs', value: _.select(grades,function(grade){return grade.grade > 79 && grade.grade < 90}).length},
+  {label: 'Cs', value: _.select(grades,function(grade){return grade.grade > 69 && grade.grade < 80}).length},
+  {label: 'Ds', value: _.select(grades,function(grade){return grade.grade > 64 && grade.grade < 70}).length},
+  {label: 'Fs', value: _.select(grades,function(grade){return grade.grade < 65}).length},
+
+
+
+  ]
+
+
+  });
+
+
+
+
+
+

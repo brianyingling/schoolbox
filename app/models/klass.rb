@@ -22,7 +22,7 @@ class Klass < ActiveRecord::Base
     if self.assignments.present?
       total_points = (self.assignments.map(&:value).reduce(:+)) * self.students.count || 0
       student_points = self.assignments.map(&:grades).flatten.map(&:value).compact.reduce(:+) || 0
-      "#{(student_points / total_points.to_f) * 100.0} %"
+      "#{((student_points / total_points.to_f) * 100.0).round(1)} %"
     else
       "N/A"
     end

@@ -2,19 +2,40 @@
 %br
 %h4= "Student Roster for #{@klass.course.name}"
 %h5= "Period #{@klass.period}"
-%h5= "Current Class Average: #{@klass.total_average}"
-%table
-  %tr
-    %td First Name
-    %td Last Name
-    %td Average
-    - @klass.assignments.each do |assignment|
-      %td= link_to assignment.name, assignment
-  - @klass.students.each do |student|
+- if @auth.is_a?(Teacher)
+  %h5= "Current Class Average: #{@klass.total_average}"
+  %table
     %tr
-      %td= link_to student.first_name, student
-      %td= link_to student.last_name, student
-      %td= student.klass_average(@klass)
-      - student.grades.each do |grade|
-        - if grade.assignment.klasses.include?(@klass)
-          %td= "#{grade.value} / #{grade.assignment.value}"
+      %td First Name
+      %td Last Name
+      %td Average
+      - @klass.assignments.sort_by(&:name).each do |assignment|
+        %td= link_to assignment.name, assignment
+    - @klass.students.each do |student|
+      %tr
+        %td= link_to student.first_name, student
+        %td= link_to student.last_name, student
+        %td= student.klass_average(@klass)
+        - student.assignments_by_klass(@klass).sort_by(&:name).each do |assignment|
+          - student.grades.each do |grade|
+            - if grade.assignment == assignment
+              %td= "#{grade.value} / #{grade.assignment.value}"
+        / - student.grades.each do |grade|
+        /   - if grade.assignment.klasses.include?(@klass)
+        /     %td= "#{grade.value} / #{grade.assignment.value}"
+- else
+  %table
+    %tr
+      %td First Name
+      %td Last Name
+      %td Average
+      - @klass.assignments.sort_by(&:name).each do |assignment|
+        %td= link_to assignment.name, assignment
+    %tr
+      %td= link_to @auth.first_name, @auth
+      %td= link_to @auth.last_name, @auth
+      %td= @auth.klass_average(@klass)
+      - @auth.assignments_by_klass(@klass).sort_by(&:name).each do |assignment|
+        - @auth.grades.each do |grade|
+          - if grade.assignment == assignment
+            %td= "#{grade.value} /  #{grade.assignment.value}"
