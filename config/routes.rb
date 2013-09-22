@@ -20,7 +20,6 @@ Schoolbox::Application.routes.draw do
   end
 
   get '/dashboard'=>'home#dashboard'
-
   get '/login'=>'session#new'
   post '/login'=>'session#create'
   delete '/login'=>'session#destroy'
