@@ -5,13 +5,11 @@
   .row
     .large-3.columns.borders-left-col
       %div
+        / Calendar
         = render :partial=>'calendar'
       %div
-        %h5 My Schedule
-        %ul
-          - @auth.klasses.order(:period).each do |klass|
-            %li
-              = link_to "#{klass.course.name} Period #{klass.period}", klass
+        / My Schedule
+        = render :partial=>'schedule'
     .large-6.columns.borders-middle-col
       %div
         %h5 Discussion Questions
@@ -24,11 +22,4 @@
         = render :partial => 'notes/new'
       %div.droppable
         %h6 Upcoming Events
-      - if @auth.is_a?(Student)
-        %div
-          %h6 My Grades
-          %ul.assignmentlist
-            - @grades.each do |grade|
-              %li
-                %div= "#{grade.assignment.name}:"
-                %div= "#{grade.value} / #{grade.assignment.value}"
+      = render :partial => 'grades'

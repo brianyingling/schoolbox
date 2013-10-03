@@ -1,0 +1,5 @@
+%h5 My Schedule
+%ul
+  - @auth.klasses.order(:period).each do |klass|
+    %li
+      = link_to "#{klass.course.name} Period #{klass.period}", klass
