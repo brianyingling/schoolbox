@@ -38,7 +38,7 @@ class Student < ActiveRecord::Base
     points_earned   = self.grades.select {|g| assignments.include?(g.assignment)}.map(&:value).compact.reduce(:+)
 
     if points_possible.nil? || points_earned.nil?
-      '-'
+      ' '
     else
       (points_earned.to_f / points_possible.to_f * 100).round(1)
     end
