@@ -1,0 +1,10 @@
+- @klass.students.each do |student|
+  %tr
+    %td= link_to student.first_name, student
+    %td= link_to student.last_name, student
+    %td= student.klass_average(@klass)
+    - student.assignments_by_klass(@klass).sort_by(&:name).each do |assignment|
+      - student.grades.each do |grade|
+        - if grade.assignment == assignment
+          - binding.pry
+        %td= "#{grade.value} / #{grade.assignment.value}"

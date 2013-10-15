@@ -1,0 +1,6 @@
+%tr
+  %td First Name
+  %td Last Name
+  %td Average
+  - klass.assignments.sort_by(&:name).each do |assignment|
+    %td= link_to assignment.name, assignment

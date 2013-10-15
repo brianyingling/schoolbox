@@ -10,7 +10,7 @@
  *
  *
  *= require 'foundation4/css/foundation.min.css'
- *= require 'DataTables-1.9.4/media/css/jquery.dataTables.css'
+ *= require 'DataTables-1.9.4/jquery.dataTables.css'
  *= require 'jquery-ui-1.10.2/themes/base/minified/jquery-ui.min.css'
  *= require 'schoolbox'
  *= require 'calendar'

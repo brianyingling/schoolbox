@@ -16,7 +16,7 @@
 //= require 'jeditable.min.js'
 //= require 'jquery.editable-1.0.1.js'
 //= require 'jquery-ui-1.10.2/ui/jquery-ui.js'
-//= require 'DataTables-1.9.4/media/js/jquery.dataTables.min.js'
+//= require 'DataTables-1.9.4/jquery.dataTables.js'
 //= require 'foundation4/js/foundation.min.js'
 //= require 'raphael-min.js'
 //= require 'morris.js'
