@@ -1,0 +1,4 @@
+- student.assignments_by_klass(klass).sort_by(&:name).each do |assignment|
+  - student.grades.each do |grade|
+    - if grade.assignment == assignment
+      %td= "#{grade.value} / #{grade.assignment.value}" if grade.present?
