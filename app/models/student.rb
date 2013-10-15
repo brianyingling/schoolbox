@@ -33,10 +33,15 @@ class Student < ActiveRecord::Base
   # calculates's a student's class average
   # Takes a klass's average
   def klass_average(k)
-    assignments = self.assignments.select {|a| a.klasses.include?(k)}
+    assignments     = self.assignments.select {|a| a.klasses.include?(k)}
     points_possible = assignments.map(&:value).compact.reduce(:+)
-    points_earned = self.grades.select {|g| assignments.include?(g.assignment)}.map(&:value).compact.reduce(:+)
-    "#{(points_earned.to_f / points_possible.to_f * 100).round(1)}%"
+    points_earned   = self.grades.select {|g| assignments.include?(g.assignment)}.map(&:value).compact.reduce(:+)
+
+    if points_possible.nil? || points_earned.nil?
+      '-'
+    else
+      (points_earned.to_f / points_possible.to_f * 100).round(1)
+    end
   end
 
   # returns an array of assignments with a given klass
