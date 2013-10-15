@@ -9,17 +9,4 @@
     = render :partial => 'klasses/klass_student_roster',  :locals => {:klass => @klass}
 - else
   %table
-    %tr
-      %td First Name
-      %td Last Name
-      %td Average
-      - @klass.assignments.sort_by(&:name).each do |assignment|
-        %td= link_to assignment.name, assignment
-    %tr
-      %td= link_to @auth.first_name, @auth
-      %td= link_to @auth.last_name, @auth
-      %td= @auth.klass_average(@klass)
-      - @auth.assignments_by_klass(@klass).sort_by(&:name).each do |assignment|
-        - @auth.grades.each do |grade|
-          - if grade.assignment == assignment
-            %td= "Blah! #{grade.value} /  #{grade.assignment.value}"
+    = render :partial => 'klasses/klass_table_header',    :locals => {:klass => @klass}
